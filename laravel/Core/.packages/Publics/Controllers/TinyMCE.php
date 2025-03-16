@@ -7,8 +7,8 @@ class TinyMCE extends Controller{
     private $accepted_origins = [
         "http://localhost",
         "http://127.0.0.1",
-        "http://raika.sanegar.ir",
-        "http://www.raika.sanegar.ir",
+        "http://raika.Sayan.ir",
+        "http://www.raika.Sayan.ir",
     ];
     private $imageFolder = "./media/tiny/";
     private $imageExtension = ["gif", "jpg", "png"];

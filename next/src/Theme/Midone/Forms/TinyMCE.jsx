@@ -60,7 +60,7 @@ const TinyMCE = (props)=>{
             media_live_embeds: true,
             // automatic_uploads: false,
             directionality: dir,
-            content_css: '/saba/css/sanegar/tiny.css',
+            content_css: '/saba/css/Sayan/tiny.css',
             video_template_callback: function(data) {
                 return `<video style='background:#222' width='' + data.width + '' height='' + data.height + '"' + (data.poster ? ' poster='' + data.poster + '"' : '') + ' controls='controls'>\n' + '<source src='' + data.source + ''' + (data.sourcemime ? ' type='' + data.sourcemime + ''' : '') + ' />\n' + (data.altsource ? '<source src='' + data.altsource + ''' + (data.altsourcemime ? ' type='' + data.altsourcemime + ''' : '') + ' />\n' : '') + '</video>`;
             },

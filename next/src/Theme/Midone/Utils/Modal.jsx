@@ -2,7 +2,7 @@
 
 import React, {Component} from 'react';
 // import axios from 'axios';
-// import {Data} from 'sanegar-react-theme/dist/Saba';
+// import {Data} from 'Sayan-react-theme/dist/Saba';
 import {Lang} from './../index';
 // import {Tools} from './../index';
 

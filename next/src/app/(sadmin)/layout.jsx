@@ -18,7 +18,7 @@ export default function Panel({children}){
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="description" content="admin theme" />
                 <meta name="keywords" content="admin template, Icewall Admin Template, flat admin template, responsive admin template, web app" />
-                <meta name="author" content="Sanegar" />
+                <meta name="author" content="Sayan" />
                 <link rel="stylesheet" href={laraDomain+"/admin/Midone-v3/Icewall_v1.0.9_min/dist/css/app-rtl.css"} />
                 <link rel="stylesheet" href={laraDomain+"/admin/css/style.css"} />
                 {/* <link rel="stylesheet" href={laraDomain+"/admin/Midone-v3/packages/tail.select.1.0.2/tail.select.css"} /> */}

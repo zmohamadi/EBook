@@ -3,14 +3,14 @@ import RootLayout from "./RootLayout";
 export async function generateMetadata({ params, searchParams }, parent) {
   
   return {
-    author: 'Sanegar',
-    title: "THE Shop Online",
-    description: "Sale Products Of Cosmetics.",
+    author: 'Sayan',
+    title: "EBook",
+    description: "EBook",
     image: '/images/ogimage.jpg',
-    keywords: "Shop, Shop system management, Online sales",
+    keywords: "EBook",
     type: 'website',
     siteLanguage: 'fa_IR',
-    siteUrl: 'https://sanegar.ir.org/fa',
+    siteUrl: 'https://Sayan.ir.org/fa',
     openGraph: {
       images: ['/some-specific-page-image.jpg'],
     },
