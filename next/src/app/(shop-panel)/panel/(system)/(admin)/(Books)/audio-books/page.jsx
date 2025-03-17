@@ -5,5 +5,5 @@ import { useAuth } from "@/lib";
 
 export default function Page() {
    
-    return <List link="/audio-books" />;
+    return <List query="type=2" link="/audio-books" />;
 }

@@ -11,9 +11,11 @@ import { useRouter } from 'next/navigation';
 import { CheckBoxGroup } from "@/Theme/Midone/Forms/CheckBoxGroup";
 import { useAuth } from "@/lib";
 
-export function View({ id }) {
-    const { user } = useAuth();
-    const access = user?.role_id == 1 ? true : false;
+export function View({ id,link }) {
+    
+    // const { user } = useAuth();
+    // const access = user?.role_id == 1 ? true : false;
+    const access = true;
     const { Lang, local } = useLang();
     const { laraAdmin, mediaPath, nextAdmin } = useConfig();
     const { save, get } = useData();
@@ -25,8 +27,8 @@ export function View({ id }) {
         get(url, component, "info");
     }, []);
     const data = component?.state?.info;
-
     const back = () => router.back();
+    // console.log(data?.type);
 
     return (
         <>
@@ -38,10 +40,8 @@ export function View({ id }) {
                         <Tab className="col-span-12">
                             <TabHeader>
                                 <TabList href="tab-first" title={Lang('public.book_details')} active={"true"}>{Lang("public.book_details")}</TabList>
-                                {access && <>
-                                    <TabList href="tab-second" title={Lang(['public.reviews']) + "(" + data?.reviews?.length + ")"} />
-                                    <TabList href="tab-third" title={Lang(['public.ratings']) + "(" + data?.ratings?.length + ")"} />
-                                </>}
+                                <TabList href="tab-second" title={Lang(['public.reviews']) + "(" + data?.reviews?.length + ")"} />
+                                {/* <TabList href="tab-third" title={Lang(['public.ratings']) + "(" + data?.ratings?.length + ")"} /> */}
                             </TabHeader>
                             <TabBody>
                                 <TabPanel id="tab-first" active={"true"}>
@@ -70,15 +70,10 @@ export function View({ id }) {
                                                 <p className="text-sm text-gray-500">{Lang(["public.publication_year"])}</p>
                                                 <h2 className="text-lg font-medium text-gray-700">{data?.publication_year || "-"}</h2>
                                             </div>
-                                            {/* Type */}
-                                            <div>
-                                                <p className="text-sm text-gray-500">{Lang(["public.type"])}</p>
-                                                <h2 className="text-lg font-medium text-gray-700">{data?.type || "-"}</h2>
-                                            </div>
                                             {/* File Type */}
                                             <div>
                                                 <p className="text-sm text-gray-500">{Lang(["public.file_type"])}</p>
-                                                <h2 className="text-lg font-medium text-gray-700">{data?.file_type || "-"}</h2>
+                                                <h2 className="text-lg font-medium text-gray-700">{data?.file_type?.["title_" + local]}</h2>
                                             </div>
                                             {/* Page Count */}
                                             <div>
@@ -86,15 +81,19 @@ export function View({ id }) {
                                                 <h2 className="text-lg font-medium text-gray-700">{data?.page_count || "-"}</h2>
                                             </div>
                                             {/* Duration */}
-                                            <div>
-                                                <p className="text-sm text-gray-500">{Lang(["public.duration"])}</p>
-                                                <h2 className="text-lg font-medium text-gray-700">{data?.duration || "-"}</h2>
-                                            </div>
-                                            {/* File Size */}
-                                            <div>
-                                                <p className="text-sm text-gray-500">{Lang(["public.file_size"])}</p>
-                                                <h2 className="text-lg font-medium text-gray-700">{data?.file_size || "-"}</h2>
-                                            </div>
+                                            {
+                                                data?.type == 2 &&<>
+                                                    <div>
+                                                        <p className="text-sm text-gray-500">{Lang(["public.duration"])}</p>
+                                                        <h2 className="text-lg font-medium text-gray-700">{data?.duration || "-"}</h2>
+                                                    </div>
+                                                    {/* File Size */}
+                                                    <div>
+                                                        <p className="text-sm text-gray-500">{Lang(["public.file_size"])}</p>
+                                                        <h2 className="text-lg font-medium text-gray-700">{data?.file_size || "-"}</h2>
+                                                    </div>
+                                                </>
+                                            }
                                             {/* Introduction */}
                                             <div className="lg:col-span-2">
                                                 <p className="text-sm text-gray-500">{Lang(["public.introduction"])}</p>
@@ -113,7 +112,7 @@ export function View({ id }) {
                                             {/* Publication Status */}
                                             <div>
                                                 <p className="text-sm text-gray-500">{Lang(["public.publication_status"])}</p>
-                                                <h2 className="text-lg font-medium text-gray-700">{data?.publication_status || "-"}</h2>
+                                                <h2 className="text-lg font-medium text-gray-700">{data?.publication?.["title_" + local]}</h2>
                                             </div>
                                             {/* Rating */}
                                             <div>
@@ -130,15 +129,100 @@ export function View({ id }) {
                                                 <p className="text-sm text-gray-500">{Lang(["public.view_count"])}</p>
                                                 <h2 className="text-lg font-medium text-gray-700">{data?.view_count || "-"}</h2>
                                             </div>
-                                            {/* Language */}
-                                            <div>
-                                                <p className="text-sm text-gray-500">{Lang(["public.language"])}</p>
-                                                <h2 className="text-lg font-medium text-gray-700">{data?.lang || "-"}</h2>
-                                            </div>
                                             {/* Status */}
                                             <div>
                                                 <p className="text-sm text-gray-500">{Lang(["public.status"])}</p>
-                                                <h2 className="text-lg font-medium text-gray-700">{data?.status_id == 1 ? Lang(["public.active"]) : Lang(["public.inactive"])}</h2>
+                                                <h2 className="text-lg font-medium text-gray-700">{data?.active_status?.["title_" + local]}</h2>
+                                            </div>
+                                            {/* Authors */}
+                                            <div className="lg:col-span-2">
+                                                <p className="text-sm text-gray-500">{Lang(["public.authors"])}</p>
+                                                <ul className="list-disc list-inside">
+                                                {data.creators?.filter(item => item?.author)?.map((author, index) => (                                                        
+                                                    <li key={index} className="text-gray-700">
+                                                            {author.firstname} {author.lastname}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            {/* Narrators */}
+                                            {data?.type == 2 &&
+                                                <div className="lg:col-span-2">
+                                                    <p className="text-sm text-gray-500">{Lang(["public.narrators"])}</p>
+                                                    <ul className="list-disc list-inside">
+                                                    {data.creators?.filter(item => item?.narrator)?.map((narrator, index) => (
+                                                            <li key={index} className="text-gray-700">
+                                                                {narrator.firstname} {narrator.lastname}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            }
+                                            {/* Translators */}
+                                            <div className="lg:col-span-2">
+                                                <p className="text-sm text-gray-500">{Lang(["public.translators"])}</p>
+                                                <ul className="list-disc list-inside">
+                                                {data.creators?.filter(item => item?.translator)?.map((translator, index) => (
+                                                        <li key={index} className="text-gray-700">
+                                                            {translator.firstname} {translator.lastname}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            {/* Categories */}
+                                            <div className="lg:col-span-2">
+                                                <p className="text-sm text-gray-500">{Lang(["public.categories"])}</p>
+                                                <ul className="list-disc list-inside">
+                                                    {data?.categories?.map((category, index) => (
+                                                        <li key={index} className="text-gray-700">
+                                                            {category.name}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            {/* Original Price */}
+                                            <div>
+                                                <p className="text-sm text-gray-500">{Lang(["public.original_price"])}</p>
+                                                <h2 className="text-lg font-medium text-gray-700">{data?.original_price || "-"} {Lang(["public.currency"])}</h2>
+                                            </div>
+                                            {/* Discounted Price */}
+                                            <div>
+                                                <p className="text-sm text-gray-500">{Lang(["public.discounted_price"])}</p>
+                                                <h2 className="text-lg font-medium text-gray-700">{data?.discounted_price || "-"} {Lang(["public.currency"])}</h2>
+                                            </div>
+                                            {/* Files */}
+                                            <div className="lg:col-span-2">
+                                                <p className="text-sm text-gray-500">{Lang(["public.files"])}</p>
+                                                <ul className="list-disc list-inside">
+                                                    {data?.image && (
+                                                        <li className="text-gray-700">
+                                                            <a href={`${mediaPath}/books/${data.image}`} target="_blank" rel="noopener noreferrer" className="text-blue-600">
+                                                                {Lang(["public.image"])}
+                                                            </a>
+                                                        </li>
+                                                    )}
+                                                    {data?.file && (
+                                                        <li className="text-gray-700">
+                                                            <a href={`${mediaPath}/books/${data.file}`} target="_blank" rel="noopener noreferrer" className="text-blue-600">
+                                                                {Lang(["public.file"])}
+                                                            </a>
+                                                        </li>
+                                                    )}
+                                                    {data?.sample_file && (
+                                                        <li className="text-gray-700">
+                                                            <a href={`${mediaPath}/books/${data.sample_file}`} target="_blank" rel="noopener noreferrer" className="text-blue-600">
+                                                                {Lang(["public.sample_file"])}
+                                                            </a>
+                                                        </li>
+                                                    )}
+                                                    {data?.audio_file && (
+                                                        <li className="text-gray-700">
+                                                            <a href={`${mediaPath}/books/${data.audio_file}`} target="_blank" rel="noopener noreferrer" className="text-blue-600">
+                                                                {Lang(["public.audio_file"])}
+                                                            </a>
+                                                        </li>
+                                                    )}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -151,9 +235,14 @@ export function View({ id }) {
                                             <ul className="list-disc list-inside">
                                                 {data.reviews.map((review, index) => (
                                                     <li key={index}>
-                                                        <Link href={`${nextAdmin}/reviews/${review.id}`} className="text-blue-600">
-                                                            {index + 1}. {review?.user?.name} ({Lang('public.view')} {Lang('public.review')})
-                                                        </Link>
+                                                        {Lang('public.comment')} {index + 1} . {review?.comment}{" "}
+                                                        {review?.user ? (
+                                                            <span className="italic">
+                                                                {review.user.firstname} {review.user.lastname}
+                                                            </span>
+                                                        ) : (
+                                                            ""
+                                                        )}
                                                     </li>
                                                 ))}
                                             </ul>

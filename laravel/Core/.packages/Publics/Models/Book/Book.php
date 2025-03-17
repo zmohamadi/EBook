@@ -51,7 +51,7 @@ class Book extends Model
     // رابطه با ناشر
     public function publisher()
     {
-        return $this->belongsTo(Publisher::class);
+        return $this->belongsTo(Publisher::class,"publisher_id");
     }
 
     // رابطه با دسته‌بندی‌ها
@@ -75,7 +75,7 @@ class Book extends Model
     // رابطه با خالقان (نویسنده، مترجم، راوی)
     public function creators()
     {
-        return $this->belongsToMany(\Models\Person\User::class, 'book_creator')->withPivot('type');
+        return $this->belongsToMany(\Models\Person\User::class, 'book_user')->withPivot('type');
     }
 
     // رابطه با نویسندگان
@@ -129,5 +129,13 @@ class Book extends Model
             });
         }
         return $query->whereHas('creators');
+    }
+    public function publication()
+    {
+        return $this->belongsTo(\Models\Base\Status::class, 'status_id', 'code')->where('group_id', '4');
+    }
+    public function fileType()
+    {
+        return $this->belongsTo(\Models\Base\Status::class, 'status_id', 'code')->where('group_id', '7');
     }
 }

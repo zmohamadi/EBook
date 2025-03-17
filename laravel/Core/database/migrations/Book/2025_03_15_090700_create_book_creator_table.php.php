@@ -16,9 +16,9 @@ return new class extends Migration
             $table->charset = 'utf8';
             $table->collation = 'utf8_persian_ci';
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade')->comment('شناسه کتاب');
-            $table->foreignId('creator_id')->constrained('creators')->onDelete('cascade')->comment('شناسه پدیدآورنده');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->comment('شناسه پدیدآورنده');
             $table->foreignId('type')->constrained('roles')->onDelete('cascade')->comment('شناسه نقش');
-            $table->primary(['book_id', 'creator_id', 'type']);
+            $table->primary(['book_id', 'user_id', 'type']);
         });
     }
 

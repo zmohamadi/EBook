@@ -113,11 +113,19 @@ export const useFormElement = (props)=>{
                 dvalue = this.getPreviousRef();
             }
             
-            else if(typeof dvalue == 'object' && dvalue != null && type == "element"){
+            // else if(typeof dvalue == 'object' && dvalue != null && type == "element"){
+            //     let newVal = [];
+            //     dvalue?.map((item)=>{newVal.push(item?.id)});
+            //     dvalue = newVal;
+            // }
+            else if (typeof dvalue == 'object' && dvalue != null && type == "element") {
                 let newVal = [];
-                dvalue.map((item)=>{newVal.push(item?.id)});
+                if (Array.isArray(dvalue)) {
+                    dvalue.map((item) => newVal.push(item?.id));
+                }
                 dvalue = newVal;
             }
+            
             
             return dvalue;
         },

@@ -39,7 +39,7 @@ $lang = [
 
     // اضافه کردن ترجمه‌های جدید
     'publication_year' => 'سال انتشار',
-    'introduction' => 'مقدمه',
+    'introduction' => 'معرفی',
     'recommended_audience' => 'مخاطبان پیشنهادی',
     'excerpt' => 'گزیده',
     'publisher' => 'ناشر',
@@ -54,6 +54,12 @@ $lang = [
     'status_id' => 'شناسه وضعیت',
     'rating'=>'امتیاز',
     'view_count'=>'بازدید',
+    'sample_file'=>'فایل نمونه',
+    'book_details'=>'جزییات کتاب',
+    'reviews'=>'نظرات',
+    'rating_count'=>'امتیاز دهندگان',
+    'currency'=>'تومان',
+    'files'=>'فایلها',
 ];
 
 $menus = include(__DIR__.'/./menus.php');

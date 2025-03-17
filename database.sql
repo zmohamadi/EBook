@@ -624,50 +624,20 @@ CREATE TABLE `base_statuses` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 /*Data for the table `base_statuses` */
 
 insert  into `base_statuses`(`id`,`title_fa`,`title_en`,`group_id`,`code`,`color`,`status_id`,`deleted_at`,`created_at`,`updated_at`) values 
-(1,'وضعیت فعالیت',NULL,NULL,NULL,'',1,NULL,NULL,NULL),
-(2,'فعال',NULL,1,'1','theme-10',1,NULL,NULL,NULL),
-(3,'بررسی نشده',NULL,1,'-1','theme-22',1,NULL,NULL,NULL),
-(4,'غیرفعال',NULL,1,'0','theme-24',1,NULL,NULL,NULL),
-(5,'تعهد ستاد',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL),
-(6,'دارد',NULL,5,'1',NULL,1,NULL,NULL,NULL),
-(7,'ندارد',NULL,5,'0',NULL,1,NULL,NULL,NULL),
-(8,'وضعیت گزارش دهی',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL),
-(9,'باز',NULL,8,'1','theme-10',1,NULL,NULL,NULL),
-(10,'بسته',NULL,8,'0','theme-24',1,NULL,NULL,NULL),
-(11,'وضعیت ثبت نام',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL),
-(12,'باز',NULL,11,'1','theme-10',1,NULL,NULL,NULL),
-(13,'بسته',NULL,11,'0','theme-24',1,NULL,NULL,NULL),
-(14,'وضعیت تایید',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL),
-(15,'نیاز به بررسی',NULL,14,'2','theme-22',1,NULL,NULL,NULL),
-(16,'تایید',NULL,14,'1','theme-10',1,NULL,NULL,NULL),
-(17,'عدم تایید',NULL,14,'0','theme-24',1,NULL,NULL,NULL),
-(18,'حذف',NULL,14,'-1','theme-22',1,NULL,NULL,NULL),
-(19,'وضعیت پاسخ تیکت',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL),
-(20,'در انتظار پاسخ',NULL,19,'0','theme-23',1,NULL,NULL,NULL),
-(21,'در حال بررسی',NULL,19,'1','theme-14',1,NULL,NULL,NULL),
-(22,'پاسخ داده شد',NULL,19,'2','theme-10',1,NULL,NULL,NULL),
-(23,'بسته شد',NULL,19,'3','theme-24',1,NULL,NULL,NULL),
-(24,'وضعیت اولویت پاسخ به تیکت',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL),
-(25,'کم',NULL,24,'1','theme-200',1,NULL,NULL,NULL),
-(26,'متوسط',NULL,24,'2','theme-10',1,NULL,NULL,NULL),
-(27,'زیاد',NULL,24,'3','theme-24',1,NULL,NULL,NULL),
-(28,'وضغیت گزارشی که مبلغ ارسال کرده',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL),
-(29,'درانتظار بررسی',NULL,28,'-1','theme-22',1,NULL,NULL,NULL),
-(30,'تایید',NULL,28,'1','theme-10',1,NULL,NULL,NULL),
-(31,'عدم تایید',NULL,28,'0','theme-24',1,NULL,NULL,NULL),
-(33,'وضعیت فعالیت فرهنگی مبلغ',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL),
-(34,'فعال',NULL,33,'1','theme-10',1,NULL,NULL,NULL),
-(35,'غیرفعال',NULL,33,'0','theme-22',1,NULL,NULL,NULL),
-(36,'نیمه فعال',NULL,33,'2','theme-22',1,NULL,NULL,NULL),
-(37,'جنسیت',NULL,0,NULL,NULL,1,NULL,NULL,NULL),
-(38,'عمومی',NULL,37,'1',NULL,1,NULL,NULL,NULL),
-(39,'آقایان',NULL,37,'2',NULL,1,NULL,NULL,NULL),
-(40,'بانوان',NULL,37,'3',NULL,1,NULL,NULL,NULL);
+(1,'وضعیت فعالیت','وضعیت فعالیت',0,NULL,NULL,1,NULL,NULL,NULL),
+(2,'فعال','فعال',1,'1',NULL,1,NULL,NULL,NULL),
+(3,'غیرفعال','غیرفعال',1,'0',NULL,1,NULL,NULL,NULL),
+(4,'وضعیت انتشار','وضعیت انتشار',0,NULL,NULL,1,NULL,NULL,NULL),
+(5,'منتشر شده','منتشر شده',4,'1',NULL,1,NULL,NULL,NULL),
+(6,'منتشر نشده','منتشر نشده',4,'0',NULL,1,NULL,NULL,NULL),
+(7,'نوع فایل کتاب','نوع فایل کتاب',0,NULL,NULL,1,NULL,NULL,NULL),
+(8,'PDF','PDF',7,'1',NULL,1,NULL,NULL,NULL),
+(9,'EPUB','EPUB',7,'2',NULL,1,NULL,NULL,NULL);
 
 /*Table structure for table `book_audiobook_files` */
 
@@ -732,6 +702,13 @@ CREATE TABLE `book_category` (
 
 /*Data for the table `book_category` */
 
+insert  into `book_category`(`book_id`,`category_id`) values 
+(3,5),
+(4,1),
+(4,2),
+(5,2),
+(5,3);
+
 /*Table structure for table `book_excerpts` */
 
 DROP TABLE IF EXISTS `book_excerpts`;
@@ -793,7 +770,8 @@ DROP TABLE IF EXISTS `book_reviews`;
 
 CREATE TABLE `book_reviews` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `book_id` bigint(20) unsigned NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `book_id` int(11) unsigned NOT NULL,
   `comment` text COLLATE utf8_persian_ci NOT NULL COMMENT 'نظر کاربر',
   `rating` int(11) NOT NULL DEFAULT 1 COMMENT 'امتیاز از ۱ تا ۵',
   `lang` varchar(2) COLLATE utf8_persian_ci NOT NULL DEFAULT 'fa' COMMENT 'زبان',
@@ -807,27 +785,39 @@ CREATE TABLE `book_reviews` (
 
 /*Data for the table `book_reviews` */
 
-insert  into `book_reviews`(`id`,`book_id`,`comment`,`rating`,`lang`,`status_id`,`deleted_at`,`created_at`,`updated_at`) values 
-(1,1,'این کتاب بسیار تأثیرگذار بود و من را به فکر فرو برد.',5,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(2,2,'رمانی فوق‌العاده با داستانی پیچیده و جذاب.',4,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(3,3,'کتابی عالی برای درک بهتر خطاهای شناختی.',5,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(4,4,'کتابی ترسناک و در عین حال واقع‌گرایانه درباره آینده.',4,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(5,5,'این کتاب دیدگاه من را نسبت به زندگی کاملاً تغییر داد.',5,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13');
+insert  into `book_reviews`(`id`,`user_id`,`book_id`,`comment`,`rating`,`lang`,`status_id`,`deleted_at`,`created_at`,`updated_at`) values 
+(1,NULL,1,'این کتاب بسیار تأثیرگذار بود و من را به فکر فرو برد.',5,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(2,NULL,2,'رمانی فوق‌العاده با داستانی پیچیده و جذاب.',4,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(3,NULL,3,'کتابی عالی برای درک بهتر خطاهای شناختی.',5,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(4,NULL,4,'کتابی ترسناک و در عین حال واقع‌گرایانه درباره آینده.',4,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(5,NULL,5,'این کتاب دیدگاه من را نسبت به زندگی کاملاً تغییر داد.',5,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13');
 
 /*Table structure for table `book_user` */
 
 DROP TABLE IF EXISTS `book_user`;
 
 CREATE TABLE `book_user` (
-  `book_id` bigint(20) unsigned NOT NULL,
-  `creator_id` bigint(20) unsigned NOT NULL,
-  `type` bigint(20) unsigned NOT NULL,
-  PRIMARY KEY (`book_id`,`creator_id`,`type`),
-  KEY `book_user_creator_id_foreign` (`creator_id`),
+  `book_id` int(11) unsigned NOT NULL,
+  `user_id` int(11) unsigned NOT NULL,
+  `type` int(1) unsigned NOT NULL DEFAULT 1,
+  PRIMARY KEY (`book_id`,`user_id`,`type`),
+  KEY `book_user_creator_id_foreign` (`user_id`),
   KEY `book_user_type_foreign` (`type`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 /*Data for the table `book_user` */
+
+insert  into `book_user`(`book_id`,`user_id`,`type`) values 
+(3,5,1),
+(3,7,1),
+(3,8,1),
+(4,4,1),
+(4,5,1),
+(4,9,1),
+(5,4,1),
+(5,5,1),
+(5,6,1),
+(5,8,1);
 
 /*Table structure for table `books` */
 
@@ -836,7 +826,7 @@ DROP TABLE IF EXISTS `books`;
 CREATE TABLE `books` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'عنوان کتاب',
-  `publisher_id` bigint(20) unsigned NOT NULL,
+  `publisher_id` int(11) unsigned NOT NULL,
   `publication_year` varchar(10) COLLATE utf8_persian_ci NOT NULL COMMENT 'سال انتشار',
   `original_price` decimal(10,2) NOT NULL COMMENT 'قیمت اصلی',
   `discounted_price` decimal(10,2) DEFAULT NULL COMMENT 'قیمت با تخفیف',
@@ -845,8 +835,8 @@ CREATE TABLE `books` (
   `excerpt` text COLLATE utf8_persian_ci NOT NULL COMMENT 'بخشی از متن کتاب',
   `sample_file` varchar(255) COLLATE utf8_persian_ci DEFAULT NULL COMMENT 'فایل نمونه',
   `file` varchar(255) COLLATE utf8_persian_ci DEFAULT NULL COMMENT 'فایل اصلی',
-  `type` enum('text','audio') COLLATE utf8_persian_ci NOT NULL COMMENT 'نوع کتاب: متنی یا صوتی',
-  `file_type` enum('EPUB','PDF','MP3','WAV') COLLATE utf8_persian_ci DEFAULT NULL COMMENT 'نوع فایل',
+  `type` int(1) NOT NULL DEFAULT 1 COMMENT 'نوع کتاب: متنی یا صوتی',
+  `file_type` int(1) DEFAULT 1 COMMENT 'نوع فایل',
   `page_count` int(11) DEFAULT NULL COMMENT 'تعداد صفحات (برای کتاب‌های متنی)',
   `duration` int(11) DEFAULT NULL COMMENT 'زمان به ثانیه (برای کتاب‌های صوتی)',
   `file_size` int(11) DEFAULT NULL COMMENT 'حجم فایل به بایت',
@@ -867,11 +857,11 @@ CREATE TABLE `books` (
 /*Data for the table `books` */
 
 insert  into `books`(`id`,`title`,`publisher_id`,`publication_year`,`original_price`,`discounted_price`,`introduction`,`recommended_audience`,`excerpt`,`sample_file`,`file`,`type`,`file_type`,`page_count`,`duration`,`file_size`,`publication_status`,`image`,`rating`,`rating_count`,`view_count`,`lang`,`status_id`,`deleted_at`,`created_at`,`updated_at`) values 
-(1,'شازده کوچولو',1,'۱۴۰۱',45000.00,40000.00,'شازده کوچولو کتابی است که توسط آنتوان دو سنت اگزوپری نوشته شده و به مفاهیم عمیق انسانی می‌پردازد.','این کتاب برای تمام سنین، به ویژه علاقه‌مندان به ادبیات و فلسفه توصیه می‌شود.','همه بزرگ‌سالان ابتدا کودک بوده‌اند، اما تعداد کمی از آن‌ها این را به یاد می‌آورند.','http://example.com/sample1.pdf','http://example.com/book1.pdf','text','PDF',96,NULL,1024000,'published','http://example.com/shazdeh_kocholo.jpg',4.80,500,10000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(2,'صد سال تنهایی',2,'۱۴۰۰',60000.00,55000.00,'رمانی از گابریل گارسیا مارکز که به عنوان یکی از شاهکارهای ادبیات جهان شناخته می‌شود.','این کتاب برای علاقه‌مندان به رمان‌های کلاسیک و ادبیات آمریکای لاتین توصیه می‌شود.','سال‌ها بعد، مقابل جوخه‌ی اعدام، سرهنگ آئورلیانو بوئندیا بعدازظهر دوردستی را به یاد می‌آورد که پدرش او را برای کشف یخ برد.','http://example.com/sample2.pdf','http://example.com/book2.pdf','text','EPUB',417,NULL,2048000,'published','http://example.com/sad_sal_tanhai.jpg',4.70,700,15000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(3,'کتاب صوتی هنر شفاف اندیشیدن',3,'۱۴۰۲',70000.00,65000.00,'کتابی از رولف دوبلی که به بررسی خطاهای شناختی و نحوه تفکر شفاف می‌پردازد.','این کتاب برای علاقه‌مندان به روانشناسی و توسعه فردی توصیه می‌شود.','ما اغلب فکر می‌کنیم که تصمیم‌هایمان منطقی هستند، اما در واقع تحت تأثیر خطاهای شناختی قرار داریم.','http://example.com/sample3.mp3','http://example.com/book3.mp3','audio','MP3',NULL,14400,512000,'published','http://example.com/art_of_thinking.jpg',4.60,300,8000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(4,'1984',4,'۱۳۹۹',55000.00,50000.00,'رمانی از جورج اورول که به بررسی جامعه‌ای توتالیتر و کنترل‌شده می‌پردازد.','این کتاب برای علاقه‌مندان به ادبیات ضدآرمان‌شهری و فلسفه سیاسی توصیه می‌شود.','جنگ صلح است، آزادی بردگی است، نادانی قدرت است.','http://example.com/sample4.pdf','http://example.com/book4.pdf','text','PDF',328,NULL,1536000,'published','http://example.com/1984.jpg',4.90,1000,20000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(5,'انسان در جستجوی معنا',5,'۱۴۰۱',48000.00,43000.00,'کتابی از ویکتور فرانکل که به تجربیات او در اردوگاه کار اجباری و معنای زندگی می‌پردازد.','این کتاب برای علاقه‌مندان به روانشناسی و فلسفه زندگی توصیه می‌شود.','هر چیزی را می‌توان از انسان گرفت، به جز یک چیز: آزادی انتخاب نحوه برخورد با شرایط.','http://example.com/sample5.pdf','http://example.com/book5.pdf','text','EPUB',200,NULL,1024000,'published','http://example.com/man_search.jpg',4.80,600,12000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13');
+(1,'شازده کوچولو',1,'۱۴۰۱',45000.00,40000.00,'شازده کوچولو کتابی است که توسط آنتوان دو سنت اگزوپری نوشته شده و به مفاهیم عمیق انسانی می‌پردازد.','این کتاب برای تمام سنین، به ویژه علاقه‌مندان به ادبیات و فلسفه توصیه می‌شود.','همه بزرگ‌سالان ابتدا کودک بوده‌اند، اما تعداد کمی از آن‌ها این را به یاد می‌آورند.','http://example.com/sample1.pdf','http://example.com/book1.pdf',1,2,96,NULL,1024000,'published','http://example.com/shazdeh_kocholo.jpg',4.80,500,10000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(2,'صد سال تنهایی',2,'۱۴۰۰',60000.00,55000.00,'رمانی از گابریل گارسیا مارکز که به عنوان یکی از شاهکارهای ادبیات جهان شناخته می‌شود.','این کتاب برای علاقه‌مندان به رمان‌های کلاسیک و ادبیات آمریکای لاتین توصیه می‌شود.','سال‌ها بعد، مقابل جوخه‌ی اعدام، سرهنگ آئورلیانو بوئندیا بعدازظهر دوردستی را به یاد می‌آورد که پدرش او را برای کشف یخ برد.','http://example.com/sample2.pdf','http://example.com/book2.pdf',1,1,417,NULL,2048000,'published','http://example.com/sad_sal_tanhai.jpg',4.70,700,15000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(3,'کتاب صوتی هنر شفاف اندیشیدن',3,'1402',70000.00,65000.00,'کتابی از رولف دوبلی که به بررسی خطاهای شناختی و نحوه تفکر شفاف می‌پردازد.','این کتاب برای علاقه‌مندان به روانشناسی و توسعه فردی توصیه می‌شود.','ما اغلب فکر می‌کنیم که تصمیم‌هایمان منطقی هستند، اما در واقع تحت تأثیر خطاهای شناختی قرار داریم.','http://example.com/sample3.mp3','http://example.com/book3.mp3',2,NULL,NULL,14400,512000,'1','http://example.com/art_of_thinking.jpg',4.60,300,8000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-17 07:15:41'),
+(4,'1984',4,'1399',55000.00,50000.00,'رمانی از جورج اورول که به بررسی جامعه‌ای توتالیتر و کنترل‌شده می‌پردازد.','این کتاب برای علاقه‌مندان به ادبیات ضدآرمان‌شهری و فلسفه سیاسی توصیه می‌شود.','جنگ صلح است، آزادی بردگی است، نادانی قدرت است.','http://example.com/sample4.pdf','http://example.com/book4.pdf',1,NULL,328,34,1536000,'1','http://example.com/1984.jpg',4.90,1000,20000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-17 08:55:50'),
+(5,'انسان در جستجوی معنا',5,'1401',48000.00,43000.00,'کتابی از ویکتور فرانکل که به تجربیات او در اردوگاه کار اجباری و معنای زندگی می‌پردازد.','این کتاب برای علاقه‌مندان به روانشناسی و فلسفه زندگی توصیه می‌شود.','هر چیزی را می‌توان از انسان گرفت، به جز یک چیز: آزادی انتخاب نحوه برخورد با شرایط.','http://example.com/sample5.pdf','http://example.com/book5.pdf',2,2,200,780,1024000,'1','http://example.com/man_search.jpg',4.80,600,12000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-17 09:22:55');
 
 /*Table structure for table `cache` */
 
