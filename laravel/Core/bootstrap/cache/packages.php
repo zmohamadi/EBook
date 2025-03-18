@@ -1,24 +1,24 @@
 <?php return array (
   'hekmatinasser/verta' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Hekmatinasser\\Verta\\Laravel\\VertaServiceProvider',
-    ),
     'aliases' => 
     array (
       'Verta' => 'Hekmatinasser\\Verta\\Verta',
     ),
+    'providers' => 
+    array (
+      0 => 'Hekmatinasser\\Verta\\Laravel\\VertaServiceProvider',
+    ),
   ),
   'ipe/smsir-php' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Ipe\\Sdk\\SmsIrServiceProvider',
-    ),
     'aliases' => 
     array (
       'SmsIr' => 'Ipe\\Sdk\\Facades\\SmsIr',
+    ),
+    'providers' => 
+    array (
+      0 => 'Ipe\\Sdk\\SmsIrServiceProvider',
     ),
   ),
   'laravel/sail' => 
