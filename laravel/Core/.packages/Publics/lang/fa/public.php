@@ -60,6 +60,10 @@ $lang = [
     'rating_count'=>'امتیاز دهندگان',
     'currency'=>'تومان',
     'files'=>'فایلها',
+    
+    
+    'name_fa'=>'نام',
+    'nationality_fa '=>'ملیت',
 ];
 
 $menus = include(__DIR__.'/./menus.php');

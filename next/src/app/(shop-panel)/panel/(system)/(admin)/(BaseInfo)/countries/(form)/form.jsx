@@ -53,7 +53,7 @@ export default function Form({id}){
                                                         </TabBody>
                                                 </Tab>
                                                 <Box shadow={false}>
-                                                        <Input required="true" label="phone_code" refItem={[component, "phonecode"]} />
+                                                        {/* <Input required="true" label="phone_code" refItem={[component, "phonecode"]} /> */}
                                                         <CheckBox label="status" name={Lang('public.active')} refItem={[component, "status_id"]} />
                                                 </Box>
                                         </div>

@@ -52,7 +52,7 @@ export default function Form({id}){
                             </TabBody>
                         </Tab>
                         <Box shadow={false}>
-                            <SelectTail required="true" label="country" refItem={[component, "country_id"]} data={needles?.country} titleKey={"name_"+local} />
+                            {/* <SelectTail required="true" label="country" refItem={[component, "country_id"]} data={needles?.country} titleKey={"name_"+local} /> */}
                             <CheckBox label="status" name={Lang('public.active')} refItem={[component, "status_id"]} />
                         </Box>
                     </div>

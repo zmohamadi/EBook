@@ -51,7 +51,7 @@ export function List() {
                             name="XOctagon"
                             tooltip={Lang('public.delete')}
                             color="darkred"
-                            onClick={() => destroy(laraAdmin + "/publishers/" + item?.id)}
+                            onClick={() => destroy(laraAdmin + "/book-categories/" + item?.id)}
                         />
                     </div>
                 ),
