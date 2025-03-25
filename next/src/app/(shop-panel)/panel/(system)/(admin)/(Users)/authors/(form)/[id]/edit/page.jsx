@@ -4,6 +4,6 @@ import { Form } from "@/Components/Admin/UserCreator/Form";
 export default function page({params}){
     
     return(
-        <Form link="/authors" id={params?.id} />
+        <Form id={params?.id} link="/authors" titleFrame="authors"/>
     );
 }

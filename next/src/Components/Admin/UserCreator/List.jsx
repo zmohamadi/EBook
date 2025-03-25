@@ -39,6 +39,12 @@ export function List({ query=null,link,title }) {
                 ),
             },
             {
+                label: "nationality", // ملیت
+                jsx: (item) => (
+                    <span>{item?.nationality}</span>
+                ),
+            },
+            {
                 label: "mobile", // شماره همراه
                 jsx: (item) => (
                     <span>{item?.mobile}</span>
