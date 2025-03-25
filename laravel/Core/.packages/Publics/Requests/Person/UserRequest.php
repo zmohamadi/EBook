@@ -16,7 +16,6 @@ class UserRequest extends FormRequest
         $item =  [
             'firstname'=>'required',
             'lastname'=>'required',
-            'gender_id'=>'required',
             'photo'=>'required',
         ];
         if(request()->_method == "PUT")
@@ -24,16 +23,10 @@ class UserRequest extends FormRequest
             $url = explode("/", request()->path());
             $id = $url[2];
             $item["mobile"] = "required|unique:users,mobile,".$id.",id,deleted_at,NULL";
-            $item["email"] = "required|unique:users,email,".$id.",id,deleted_at,NULL";
         }
         else
         {
             $item["mobile"] = "required|unique:users,mobile,NULL,id,deleted_at,NULL";
-            $item["email"] = "required|unique:users,email,NULL,id,deleted_at,NULL";
-        }
-        if(str_contains(request()->path(),"personnels"))
-        {
-            $item["role_id"] = "required";
         }
        
         return $item;

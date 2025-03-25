@@ -60,6 +60,14 @@ $lang = [
     'rating_count'=>'امتیاز دهندگان',
     'currency'=>'تومان',
     'files'=>'فایلها',
+    'biography'=>'زندگی‌نامه',
+    'birth_date'=>'تاریخ تولد',
+    'death_date'=>'تاریخ درگذشت',
+    'role'=>'نقش',
+    'is_it_narrator' => 'آیا راوی است ؟',
+    'is_it_author' => 'آیا نویسنده است ؟',
+    'is_it_translator' => 'آیا مترجم است ؟',
+    'is_it_active_user' => 'آیا کاربر در سامانه فعال است ؟',
 ];
 
 $menus = include(__DIR__.'/./menus.php');

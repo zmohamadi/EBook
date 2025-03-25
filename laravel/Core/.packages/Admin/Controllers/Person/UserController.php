@@ -3,36 +3,38 @@
 namespace Admin\Controllers\Person;
 
 use Admin\Controllers\Public\BaseAbstract;
-use Verta;
 
 class UserController extends BaseAbstract
 {
     protected $model = "Models\Person\User";
+    protected $request = "Publics\Requests\Person\UserRequest";
     protected $with = ["activeStatus"];
     protected $showWith = ["activeStatus"];
     protected $searchFilter = ["firstname", "lastname", "mobile"];
     protected $files = ["photo"];
-    // protected $userPathInEvent = "/panel/myCourses/";
 
     public function init()
     {
         $this->storeQuery = function ($query) {
-            $query = $this->setOperator($query);
-            if (request()->_method != "PUT") {
+            // $query = $this->setOperator($query);
+            if (request()->_method != "PUT" && request()->password==null) {
                 $query->password = bcrypt(request()->mobile);
             }
             $query->save();
         };
+        $this->needles = [
+            // \Person\Role::class => fn($query) => $query->active(),
+        ];
     }
 
-    // public function showInfo($id)
-    // {
-    //     $data = [
-    //         "item" => $this->model::with("role", "gender", "activeStatus", "creator", "editor")->find($id),
-    //         "registers" => Register::with("course", "role")->where("user_id", $id)->orderBy("group", "desc")->get(),
-    //     ];
-    //     return response()->json($data);
-    // }
+    public function showInfo($id)
+    {
+        $data = [
+            "item" => $this->model::with("role", "activeStatus", "books")->find($id),
+            "books" => \Models\Book\Book::with("publisher", "categories")->where("user_id", $id)->orderBy("group", "desc")->get(),
+        ];
+        return response()->json($data);
+    }
 
     public function editEmail()
     {

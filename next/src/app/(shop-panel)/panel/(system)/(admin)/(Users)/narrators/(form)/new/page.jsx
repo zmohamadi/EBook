@@ -4,6 +4,6 @@ import { Form } from "@/Components/Admin/UserCreator/Form";
 export default function page(){
     
     return(
-        <Form link="/narrators"/>
+        <Form link="/narrators" titleFrame="narrators"/>
     );
 }
