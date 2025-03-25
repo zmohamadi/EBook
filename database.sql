@@ -524,9 +524,15 @@ CREATE TABLE `base_countries` (
   `flag` tinyint(1) NOT NULL DEFAULT 1,
   `wikiDataId` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=251 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `base_countries` */
+
+insert  into `base_countries`(`id`,`name_en`,`nationality_en`,`name_fa`,`nationality_fa`,`name_ar`,`nationality_ar`,`icon`,`phonecode`,`status_id`,`description_fa`,`description_en`,`description_ar`,`deleted_at`,`created_at`,`updated_at`,`zone_id`,`iso3`,`numeric_code`,`iso2`,`capital`,`currency`,`currency_name`,`currency_symbol`,`tld`,`native`,`region`,`subregion`,`timezones`,`translations`,`latitude`,`longitude`,`emojiU`,`flag`,`wikiDataId`) values 
+(251,NULL,NULL,'ایران','ایرانی',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,'2025-03-17 13:02:44',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL),
+(252,NULL,NULL,'عراق','عرافی',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,'2025-03-17 13:03:32',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL),
+(253,NULL,NULL,'افغانستان','افغانستانی',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,'2025-03-17 13:03:21',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL),
+(254,NULL,NULL,'انگلیس','انگلیسی',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,'2025-03-17 13:03:24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
 
 /*Table structure for table `base_languages` */
 
