@@ -31,5 +31,8 @@ return [
     'contact-us' => 'کامنت‌ها',
     'profile' => 'پروفایل',
     'change_password' => 'تغییر رمز عبور',
+    'users_management' => 'مدیریت کاربران',
+    'personnels' => 'پرسنل',
+    'users' => 'کاربران',
 ];
 ?>

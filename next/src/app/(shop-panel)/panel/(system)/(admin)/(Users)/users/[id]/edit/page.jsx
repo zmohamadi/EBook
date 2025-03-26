@@ -1,10 +1,9 @@
 "use client";
-import Form from '../../form';
+import { Form } from "@/Components/Admin/UserCreator/Form";
 
-export default function Edit({params}){
+export default function page({params}){
+    
     return(
-        <div>
-            <Form id={params.id}></Form>
-        </div>
+        <Form id={params?.id} link="/users" titleFrame="users"/>
     );
 }

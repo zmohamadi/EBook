@@ -1,7 +1,7 @@
 "use client";
 import { Form } from "@/Components/Admin/UserCreator/Form";
 
-export default function page(){
+export default function page({ params }){
     
     return(
         <Form link="/narrators" titleFrame="narrators"/>

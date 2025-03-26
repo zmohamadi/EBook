@@ -1,12 +1,9 @@
 "use client";
-import Form from '@/app/(shop-panel)/panel/(system)/(Users)/personnels/(form)/form';
+import { Form } from "@/Components/Admin/UserCreator/Form";
 
-export default function Edit({params,id}){
-    let userId = params? params?.id : id;
-
+export default function page({params}){
+    
     return(
-        <div>
-            <Form id={userId} />
-        </div>
+        <Form id={params?.id} link="/personnels" titleFrame="personnels"/>
     );
 }

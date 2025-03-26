@@ -31,7 +31,9 @@ class UserController extends BaseAbstract
     {
         $data = [
             "item" => $this->model::with("role", "activeStatus", "books")->find($id),
-            "books" => \Models\Book\Book::with("publisher", "categories")->where("user_id", $id)->orderBy("group", "desc")->get(),
+            "books" => \Models\Book\BookCreator::where("user_id", $id)->get(),
+            // "books" => \Models\Book\Book::with("publisher", "categories")
+            //     ->whereHas("creators",function ($q) use($id) { $q->where("user_id", $id); })->get(),
         ];
         return response()->json($data);
     }

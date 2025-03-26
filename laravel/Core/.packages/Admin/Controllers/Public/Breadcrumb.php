@@ -17,6 +17,9 @@ class Breadcrumb extends Controller
         'tickets' => [\Models\Ticket\Ticket::class, 'title'],
         'courses' => [\Models\Course::class, 'subject'],
         'tribunes' => [\Models\Tribune::class, 'subject'],
+        'authors' => [\Models\Person\User::class, 'lastname'],
+        'narrators' => [\Models\Person\User::class, 'lastname'],
+        'translators' => [\Models\Person\User::class, 'lastname'],
     ];
 
     public function getItems(Request $request)
