@@ -37,6 +37,15 @@ export const getMenus = (user) => {
                 { title: "translators", icon: "Globe", href: "/translators" },
             ]
         },
+        
+        // مدیریت کاربران (پرسنل، کاربران سایت)
+        {
+            title: "users_management", icon: "Users", open: false,
+            childs: [
+                { title: "personnels", icon: "User", href: "/personnels" },
+                { title: "users", icon: "Users", href: "/users" },
+            ]
+        },
 
         // مدیریت خریدها (پرداخت های موفق و ناموفق)
         {

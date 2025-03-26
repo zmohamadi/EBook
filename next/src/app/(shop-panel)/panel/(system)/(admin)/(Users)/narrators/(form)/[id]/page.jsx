@@ -1,7 +1,8 @@
 "use client";
 import { View } from "@/Components/Admin/UserCreator/View";
+
 export default function page({params}){
     return(
-        <View link="/narrators" id={params?.id} />
+        <View id={params?.id} link="/narrators" />
     );
 }

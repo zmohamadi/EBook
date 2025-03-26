@@ -1,10 +1,9 @@
 "use client";
-import Form from '@/app/(shop-panel)/panel/(system)/(Users)/personnels/(form)/form';
+import { Form } from "@/Components/Admin/UserCreator/Form";
 
-export default function New(){
+export default function page({ params }){
+    
     return(
-        <div>
-            <Form />
-        </div>
+        <Form link="/personnels" titleFrame="personnels"/>
     );
 }

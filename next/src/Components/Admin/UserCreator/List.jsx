@@ -61,6 +61,7 @@ export function List({ query=null,link,title }) {
             {
                 label: "",
                 sort: false,
+                width:"110px",
                 jsx: (item) => (
                     <div className="flex justify-center">
                         <FeatherIcon
