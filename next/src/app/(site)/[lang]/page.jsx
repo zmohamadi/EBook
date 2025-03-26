@@ -24,12 +24,12 @@ export default function Page({ params }) {
     return(
         <>
             <Slider local={local} items={items?.sliders} assetsPath={assetsPath} mediaPath={mediaPath} Lang={Lang} />
-            <Category  items={items?.categories?.filter(cat=>cat?.parent_id>0)} mediaPath={mediaPath} local={local} Lang={Lang} />
-            <LastProducts   items={items?.lastProducts} categories={items?.categories} assetsPath={assetsPath} mediaPath={mediaPath} local={local} Lang={Lang} />
-            <BestSeller  local={local} items={items?.bestSellerProducts} mediaPath={mediaPath} Lang={Lang} />
-            <Line  items={items?.categories?.filter(cat=>cat?.parent_id==0)} assetsPath={assetsPath} mediaPath={mediaPath} local={local} Lang={Lang} />
-            <Brand  local={local} items={items?.brands} assetsPath={assetsPath} mediaPath={mediaPath} Lang={Lang} />
             <MostVisited  items={items?.mostVisitedProducts} assetsPath={assetsPath} mediaPath={mediaPath} local={local} Lang={Lang} />
+            <Category  items={items?.categories?.filter(cat=>cat?.parent_id>0)} mediaPath={mediaPath} local={local} Lang={Lang} />
+            {/* <LastProducts   items={items?.lastProducts} categories={items?.categories} assetsPath={assetsPath} mediaPath={mediaPath} local={local} Lang={Lang} /> */}
+            {/* <BestSeller  local={local} items={items?.bestSellerProducts} mediaPath={mediaPath} Lang={Lang} /> */}
+            {/* <Line  items={items?.categories?.filter(cat=>cat?.parent_id==0)} assetsPath={assetsPath} mediaPath={mediaPath} local={local} Lang={Lang} /> */}
+            {/* <Brand  local={local} items={items?.brands} assetsPath={assetsPath} mediaPath={mediaPath} Lang={Lang} /> */}
         </>
     );
 }

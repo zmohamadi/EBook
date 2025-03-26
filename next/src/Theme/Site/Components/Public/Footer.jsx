@@ -1,168 +1,203 @@
-import Link from "next/link";
-import Script from 'next/script'
-import { useLang } from "@/lib";
+"use client"
 
-export const Footer = ({ data,assetsPath,mediaPath,local }) => {
-	const { Lang } = useLang();
+import Link from 'next/link';
 
-	let parentCategories = data?.categories?.filter((category)=>category?.parent_id==0);
-	let subjects = data?.subjects;
-	let blogs = data?.blogs;
+const Footer = ({ data, assetsPath, mediaPath, local }) => {
+  return (
+    <footer className="footer-section footer-bg">
+      <div className="container">
+        <div className="contact-info-area">
+          <div className="contact-info-items wow fadeInUp" data-wow-delay=".2s">
+            <div className="icon">
+              <i className="icon-icon-5"></i>
+            </div>
+            <div className="content">
+              <p>Call Us 7/24</p>
+              <h3>
+                <a href="tel:+2085550112">+208-555-0112</a>
+              </h3>
+            </div>
+          </div>
+          <div className="contact-info-items wow fadeInUp" data-wow-delay=".4s">
+            <div className="icon">
+              <i className="icon-icon-6"></i>
+            </div>
+            <div className="content">
+              <p>Make a Quote</p>
+              <h3>
+                <a href="mailto:example@gmail.com">example@gmail.com</a>
+              </h3>
+            </div>
+          </div>
+          <div className="contact-info-items wow fadeInUp" data-wow-delay=".6s">
+            <div className="icon">
+              <i className="icon-icon-7"></i>
+            </div>
+            <div className="content">
+              <p>Opening Hour</p>
+              <h3>
+                Sunday - Fri: 9 aM - 6 pM
+              </h3>
+            </div>
+          </div>
+          <div className="contact-info-items wow fadeInUp" data-wow-delay=".8s">
+            <div className="icon">
+              <i className="icon-icon-8"></i>
+            </div>
+            <div className="content">
+              <p>Location</p>
+              <h3>
+                4517 Washington ave.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="footer-widgets-wrapper">
+        <div className="plane-shape float-bob-y">
+          <img src={`${assetsPath}/img/plane-shape.png`} alt="img" />
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+              <div className="single-footer-widget">
+                <div className="widget-head">
+                  <Link href="/">
+                    <img src={`${assetsPath}/img/logo/white-logo.svg`} alt="logo-img" />
+                  </Link>
+                </div>
+                <div className="footer-content">
+                  <p>
+                    Phasellus ultricies aliquam volutpat ullamcorper laoreet neque, a lacinia curabitur
+                    lacinia mollis
+                  </p>
+                  <div className="social-icon d-flex align-items-center">
+                    <a href="https://www.facebook.com"><i className="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com"><i className="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com"><i className="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com"><i className="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".4s">
+              <div className="single-footer-widget">
+                <div className="widget-head">
+                  <h3>Costumers Support</h3>
+                </div>
+                <ul className="list-area">
+                  <li>
+                    <Link href="/shop">
+                      <i className="fa-solid fa-chevrons-right"></i>
+                      Store List
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">
+                      <i className="fa-solid fa-chevrons-right"></i>
+                      Opening Hours
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">
+                      <i className="fa-solid fa-chevrons-right"></i>
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">
+                      <i className="fa-solid fa-chevrons-right"></i>
+                      Return Policy
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".6s">
+              <div className="single-footer-widget">
+                <div className="widget-head">
+                  <h3>Categories</h3>
+                </div>
+                <ul className="list-area">
+                  <li>
+                    <Link href="/shop">
+                      <i className="fa-solid fa-chevrons-right"></i>
+                      Novel Books
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/shop">
+                      <i className="fa-solid fa-chevrons-right"></i>
+                      Poetry Books
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">
+                      <i className="fa-solid fa-chevrons-right"></i>
+                      Political Books
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">
+                      <i className="fa-solid fa-chevrons-right"></i>
+                      History Books
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+              <div className="single-footer-widget">
+                <div className="widget-head">
+                  <h3>Newsletter</h3>
+                </div>
+                <div className="footer-content">
+                  <p>Sign up to searing weekly newsletter to get the latest updates.</p>
+                  <div className="footer-input">
+                    <input type="email" id="email2" placeholder="Enter Email Address" />
+                    <button className="newsletter-btn" type="submit">
+                      <i className="fa-regular fa-paper-plane"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <div className="container">
+          <div className="footer-wrapper d-flex align-items-center justify-content-between">
+            <p className="wow fadeInLeft" data-wow-delay=".3s">
+              © All Copyright 2024 by <Link href="/">Bookle</Link>
+            </p>
+            <ul className="brand-logo wow fadeInRight" data-wow-delay=".5s">
+              <li>
+                <Link href="/contact">
+                  <img src={`${assetsPath}/img/visa-logo.png`} alt="img" />
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <img src={`${assetsPath}/img/mastercard.png`} alt="img" />
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <img src={`${assetsPath}/img/payoneer.png`} alt="img" />
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <img src={`${assetsPath}/img/affirm.png`} alt="img" />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-	return(
-		<>
-		    <button className="scroltop" type="button"><i className="fas fa-arrow-up"></i></button>	
-			{/* Footer */}
-			<footer className="site-footer style-1">
-				{/* Footer Top */}
-				<div className="footer-top">
-					<div className="container">
-						<div className="row">
-							<div className="col-xl-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.1s">
-								<div className="widget widget_about me-2">
-									<div className="footer-logo logo-white">
-										<Link href={`/${local}`}><img src={`${assetsPath}/pixio/images/logo.svg`} alt="logo"/></Link>
-									</div>
-									<ul className="widget-address">
-										<li>
-											<p><span>{Lang('public.address')}</span> : {Lang('public.address_info')}</p>
-										</li>
-										<li>
-											<p><span>{Lang('public.email')}</span> : {Lang('public.email_info')}</p>
-										</li>
-										<li>
-											<p><span>{Lang('public.tel')}</span> : {Lang('public.tel_info')}</p>
-										</li>
-									</ul>
-									{/* <div className="subscribe_widget">
-										<h6 className="title fw-medium text-capitalize">subscribe to our newsletter</h6>	
-										<form className="dzSubscribe style-1" action="script/mailchamp.php" method="post">
-											<div className="dzSubscribeMsg"></div>
-											<div className="form-group">
-												<div className="input-group mb-0">
-													<input name="dzEmail" required="required" type="email" className="form-control" placeholder="Your Email Address"/>
-													<div className="input-group-addon">
-														<button name="submit" defaultValue="Submit" type="submit" className="btn">
-															<i className="icon feather icon-arrow-right"></i>
-														</button>
-													</div>
-												</div>
-											</div>
-										</form>
-									</div> */}
-								</div>
-							</div>
-							<div className="col-xl-4 col-md-4 col-sm-4 col-6 wow fadeInUp" data-wow-delay="0.3s">
-								<div className="widget widget_services">
-									<h5 className="footer-title">{Lang('public.shop')}</h5>
-									<ul>
-										{parentCategories?.map((item,index)=>
-										{
-											return(
-												<li key={index}>
-													<Link href={`/${local}/products?line=${item.id}`}>{item?.["title_"+local]}</Link>
-												</li>
-											);
-										})}
-									</ul>   
-								</div>
-							</div>
-							<div className="col-xl-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.2s">
-								<div className="widget widget_post">
-									<h5 className="footer-title">{Lang('public.last')} {Lang('public.blog')}</h5>
-									<ul>
-										{blogs?.map((blog, index)=>
-										{
-											return(
-												<li key={index}>
-													<div className="dz-media">
-														<img src={mediaPath+"/blog/"+blog?.thumb} alt={blog?.title}/>
-													</div>
-													<div className="dz-content">
-														<h6 className="name">
-															<Link href={`/${local}/blog/${blog?.id}`}>
-																{blog?.title}
-															</Link>
-														</h6>
-														<span className="time">{blog?.created_at}</span>
-													</div>
-												</li>
-											);
-										})}
-									</ul>
-								</div>
-							</div>
-							{/* <div className="col-xl-2 col-md-4 col-sm-4 col-6 wow fadeInUp" data-wow-delay="0.4s">
-								<div className="widget widget_services">
-									<h5 className="footer-title">Useful Links</h5>
-									<ul>
-										<li><a href="#!">Privacy Policy</a></li>
-										<li><a href="#!">Returns</a></li>
-										<li><a href="#!">Terms & Conditions</a></li>
-										<li><a href="#!">Contact Us</a></li>
-										<li><a href="#!">Latest News</a></li>
-										<li><a href="#!">Our Sitemap</a></li>
-									</ul>
-								</div>
-							</div> */}
-							{/* <div className="col-xl-2 col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.5s">
-								<div className="widget widget_services">
-									<h5 className="footer-title">Footer Menu</h5>
-									<ul>
-										<li><a href="#!">Instagram profile</a></li>
-										<li><a href="#!">New Collection</a></li>
-										<li><a href="#!">Woman Dress</a></li>
-										<li><a href="#!">Contact Us</a></li>
-										<li><a href="#!">Latest News</a></li>
-									</ul>
-								</div>
-							</div> */}
-						</div>
-					</div>
-				</div>
-				{/* Footer Top End */}
-				{/* Footer Bottom */}
-				<div className="footer-bottom">
-					<div className="container">
-						<div className="row fb-inner wow fadeInUp" data-wow-delay="0.1s">
-							<div className="col-lg-12 col-md-12 text-center"> 
-								<p className="copyright-text">© <span className="current-year">1403</span> 
-								<a href="/">{Lang('public.main_title_info')}</a> {Lang('public.copyright')}</p>
-							</div>
-							{/* <div className="col-lg-6 col-md-12 text-end"> 
-								<div className="d-flex align-items-center justify-content-center justify-content-md-center justify-content-xl-end">
-									<span className="me-3">We Accept: </span>
-									<img src={assetsPath+"/pixio/images/shop/product/small/1.png"} alt=""/>
-								</div>
-							</div> */}
-						</div>
-					</div>
-				</div>
-				{/* Footer Bottom End */}	
-			</footer>
-			{/* Footer End */}
-
-			{/* <Script id='jquery.min.js' src={assetsPath + '/pixio/js/jquery.min.js'} strategy='afterInteractive' /> */}
-			<Script src={`${assetsPath}/pixio/vendor/wow/wow.min.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/bootstrap/dist/js/bootstrap.bundle.min.js`} strategy='beforeInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/bootstrap-select/dist/js/bootstrap-select.min.js`} strategy='beforeInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/bootstrap-touchspin/bootstrap-touchspin.js`} strategy='beforeInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/swiper/swiper-bundle.min.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/magnific-popup/magnific-popup.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/imagesloaded/imagesloaded.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/masonry/masonry-4.2.2.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/masonry/isotope.pkgd.min.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/countdown/jquery.countdown.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/wnumb/wNumb.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/nouislider/nouislider.min.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/slick/slick.min.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/lightgallery/dist/lightgallery.min.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/lightgallery/dist/plugins/thumbnail/lg-thumbnail.min.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/lightgallery/dist/plugins/zoom/lg-zoom.min.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/vendor/group-slide/group-loop.js`} strategy='afterInteractive' />
-			<Script src={`${assetsPath}/pixio/js/dz.carousel.js`} strategy='afterInteractive' />
-			{/* <Script src={`${assetsPath}/pixio/js/dz.ajax.js`} strategy='afterInteractive' /> */}
-			<Script src={`${assetsPath}/pixio/js/custom.js`} strategy='afterInteractive' />
-		</>
-	);
-}
+export default Footer;
