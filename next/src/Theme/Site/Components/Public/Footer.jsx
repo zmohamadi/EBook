@@ -1,8 +1,11 @@
 "use client"
 
+import { useLang } from '@/lib';
 import Link from 'next/link';
 
 const Footer = ({ data, assetsPath, mediaPath, local }) => {
+  const { Lang } = useLang();
+  
   return (
     <footer className="footer-section footer-bg">
       <div className="container">
@@ -59,17 +62,16 @@ const Footer = ({ data, assetsPath, mediaPath, local }) => {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+            <div className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
               <div className="single-footer-widget">
                 <div className="widget-head">
                   <Link href="/">
-                    <img src={`${assetsPath}/img/logo/white-logo.svg`} alt="logo-img" />
+                    <img src={`${assetsPath}/img/logo/white-logo.png`} alt="logo-img" />
                   </Link>
                 </div>
                 <div className="footer-content">
                   <p>
-                    Phasellus ultricies aliquam volutpat ullamcorper laoreet neque, a lacinia curabitur
-                    lacinia mollis
+                   {Lang('public.footer_text')}
                   </p>
                   <div className="social-icon d-flex align-items-center">
                     <a href="https://www.facebook.com"><i className="fab fa-facebook-f"></i></a>
@@ -80,122 +82,86 @@ const Footer = ({ data, assetsPath, mediaPath, local }) => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".4s">
+            <div className="col-xl-4 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".4s">
               <div className="single-footer-widget">
                 <div className="widget-head">
-                  <h3>Costumers Support</h3>
+                  <h3>{Lang('public.with_us')}</h3>
                 </div>
                 <ul className="list-area">
                   <li>
-                    <Link href="/shop">
-                      <i className="fa-solid fa-chevrons-right"></i>
-                      Store List
+                    <Link href="/home">
+                      <i className="fa-solid fa-chevrons-left"></i>
+                      {Lang('public.home')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/books">
+                      <i className="fa-solid fa-chevrons-left"></i>
+                      {Lang('public.books')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog">
+                      <i className="fa-solid fa-chevrons-left"></i>
+                      {Lang('public.blog')}
                     </Link>
                   </li>
                   <li>
                     <Link href="/contact">
-                      <i className="fa-solid fa-chevrons-right"></i>
-                      Opening Hours
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact">
-                      <i className="fa-solid fa-chevrons-right"></i>
-                      Contact Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact">
-                      <i className="fa-solid fa-chevrons-right"></i>
-                      Return Policy
+                      <i className="fa-solid fa-chevrons-left"></i>
+                      {Lang('public.contact')}
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".6s">
+            <div className="col-xl-4 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".6s">
               <div className="single-footer-widget">
                 <div className="widget-head">
-                  <h3>Categories</h3>
+                  <h3>{Lang('public.categories')}</h3>
                 </div>
                 <ul className="list-area">
                   <li>
-                    <Link href="/shop">
-                      <i className="fa-solid fa-chevrons-right"></i>
-                      Novel Books
+                    <Link href="/home">
+                      <i className="fa-solid fa-chevrons-left"></i>
+                      {Lang('public.home')}
                     </Link>
                   </li>
                   <li>
-                    <Link href="/shop">
-                      <i className="fa-solid fa-chevrons-right"></i>
-                      Poetry Books
+                    <Link href="/books">
+                      <i className="fa-solid fa-chevrons-left"></i>
+                      {Lang('public.books')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog">
+                      <i className="fa-solid fa-chevrons-left"></i>
+                      {Lang('public.blog')}
                     </Link>
                   </li>
                   <li>
                     <Link href="/contact">
-                      <i className="fa-solid fa-chevrons-right"></i>
-                      Political Books
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact">
-                      <i className="fa-solid fa-chevrons-right"></i>
-                      History Books
+                      <i className="fa-solid fa-chevrons-left"></i>
+                      {Lang('public.contact')}
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-              <div className="single-footer-widget">
-                <div className="widget-head">
-                  <h3>Newsletter</h3>
-                </div>
-                <div className="footer-content">
-                  <p>Sign up to searing weekly newsletter to get the latest updates.</p>
-                  <div className="footer-input">
-                    <input type="email" id="email2" placeholder="Enter Email Address" />
-                    <button className="newsletter-btn" type="submit">
-                      <i className="fa-regular fa-paper-plane"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
-      <div className="footer-bottom">
+      {/* <div className="footer-bottom">
         <div className="container">
           <div className="footer-wrapper d-flex align-items-center justify-content-between">
             <p className="wow fadeInLeft" data-wow-delay=".3s">
               © All Copyright 2024 by <Link href="/">Bookle</Link>
             </p>
-            <ul className="brand-logo wow fadeInRight" data-wow-delay=".5s">
-              <li>
-                <Link href="/contact">
-                  <img src={`${assetsPath}/img/visa-logo.png`} alt="img" />
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact">
-                  <img src={`${assetsPath}/img/mastercard.png`} alt="img" />
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact">
-                  <img src={`${assetsPath}/img/payoneer.png`} alt="img" />
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact">
-                  <img src={`${assetsPath}/img/affirm.png`} alt="img" />
-                </Link>
-              </li>
-            </ul>
+            
           </div>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 };

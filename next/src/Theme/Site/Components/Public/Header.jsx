@@ -26,7 +26,7 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
               <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                 <div className="offcanvas__logo">
                   <a href="index.html">
-                    <img src={`${assetsPath}/img/logo/black-logo.svg`} alt="logo-img" />
+                    <img src={`${assetsPath}/img/logo/black-logo.png`} alt="logo-img" />
                   </a>
                 </div>
                 <div className="offcanvas__close">
@@ -112,7 +112,7 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
               </li>
             </ul>
             <ul className="list">
-              <li><i className="fa-light fa-comments"></i><a href="contact.html">Live Chat</a></li>
+              {/* <li><i className="fa-light fa-comments"></i><a href="contact.html">Live Chat</a></li> */}
               <li><i className="fa-light fa-user"></i>
                 <button onClick={toggleLoginModal}>
                   Login
@@ -133,7 +133,7 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
                   <div className="header-left">
                     <div className="logo">
                       <a href="index.html" className="header-logo">
-                        <img src={`${assetsPath}/img/logo/white-logo.svg`} alt="logo-img" />
+                        <img src={`${assetsPath}/img/logo/white-logo.png`} alt="logo-img" />
                       </a>
                     </div>
                     <div className="mean__menu-wrapper">
@@ -235,7 +235,7 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
                   <div className="header-left">
                     <div className="logo">
                       <a href="index.html" className="header-logo">
-                        <img src={`${assetsPath}/img/logo/white-logo.svg`} alt="logo-img" />
+                        <img src={`${assetsPath}/img/logo/white-logo.png`} alt="logo-img" />
                       </a>
                     </div>
                     <div className="mean__menu-wrapper">

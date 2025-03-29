@@ -50,6 +50,8 @@ export const Authors = ({ items, mediaPath,assetsPath, local, Lang }) => {
           <h2 className="mb-3 wow fadeInUp" data-wow-delay=".3s">{Lang('public.author_title')}</h2>
           <p className="wow fadeInUp" data-wow-delay=".5s">
           {Lang('public.author_p')}
+          <br/>
+          {Lang('public.author_p1')}
           </p>
         </div>
 
