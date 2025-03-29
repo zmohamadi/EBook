@@ -2,7 +2,7 @@
 
 import React, { useContext } from 'react';
 import { ProductContext } from '@/Theme/Site/ShopTools/Context/ProductContext';
-import { Category,Color,Keywords,Price,Search,Size,Reset } from "@/app/(site)/[lang]/(Shop)/products/SideBarComponent";
+import { Category,Color,Keywords,Price,Search,Size,Reset } from "@/app/(site)/[lang]/(Shop)/books/SideBarComponent";
 
 export const SideBar = ({ local, Lang }) => {
 	const { state,dispatch } = useContext(ProductContext);

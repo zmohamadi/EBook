@@ -4,7 +4,7 @@ import { useEffect,useState } from "react";
 import { useLang } from "@/lib/lang";
 import { useConfig } from "@/lib/config";
 import { useData } from "@/Theme/Midone/Utils/Data";
-import { GalleryProduct,InfoProduct,RelatedProduct,StepProduct,TabsProduct,AttachmentProduct } from "@/app/(site)/[lang]/(Shop)/products/[id]/ProductComponent";
+import { GalleryProduct,InfoProduct,RelatedProduct,StepProduct,TabsProduct,AttachmentProduct } from "@/app/(site)/[lang]/(Shop)/books/[id]/ProductComponent";
 import { BreadCrumb } from "@/Theme/Site/Components/Public/BreadCrumb";
 import { Error404 } from "@/Theme/Site/Components/Public/Error404";
 

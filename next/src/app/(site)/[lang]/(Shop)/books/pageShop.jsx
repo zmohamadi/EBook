@@ -4,9 +4,9 @@ import React, { useContext,useEffect } from 'react';
 import { useLang } from "@/lib/lang";
 import { useConfig } from "@/lib/config";
 import { ProductContext } from '@/Theme/Site/ShopTools/Context/ProductContext';
-import { Banner } from "@/app/(site)/[lang]/(Shop)/products/Banner";
-import { Product } from "@/app/(site)/[lang]/(Shop)/products/Product";
-import { SideBar } from "@/app/(site)/[lang]/(Shop)/products/SideBar";
+import { Banner } from "@/app/(site)/[lang]/(Shop)/books/Banner";
+import { Product } from "@/app/(site)/[lang]/(Shop)/books/Product";
+import { SideBar } from "@/app/(site)/[lang]/(Shop)/books/SideBar";
 
 export default function Page({ params }) {
     const { Lang } = useLang();
