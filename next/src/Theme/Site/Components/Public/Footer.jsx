@@ -15,9 +15,9 @@ const Footer = ({ data, assetsPath, mediaPath, local }) => {
               <i className="icon-icon-5"></i>
             </div>
             <div className="content">
-              <p>Call Us 7/24</p>
+              <p>شماره تماس</p>
               <h3>
-                <a href="tel:+2085550112">+208-555-0112</a>
+                <a href="tel:021-8934532">021-8934532</a>
               </h3>
             </div>
           </div>
@@ -26,7 +26,7 @@ const Footer = ({ data, assetsPath, mediaPath, local }) => {
               <i className="icon-icon-6"></i>
             </div>
             <div className="content">
-              <p>Make a Quote</p>
+              <p>ایمیل ما</p>
               <h3>
                 <a href="mailto:example@gmail.com">example@gmail.com</a>
               </h3>
@@ -37,13 +37,13 @@ const Footer = ({ data, assetsPath, mediaPath, local }) => {
               <i className="icon-icon-7"></i>
             </div>
             <div className="content">
-              <p>Opening Hour</p>
+              <p>ساعت کاری</p>
               <h3>
-                Sunday - Fri: 9 aM - 6 pM
+              شنبه تا چهارشنبه - 9 تا 17
               </h3>
             </div>
           </div>
-          <div className="contact-info-items wow fadeInUp" data-wow-delay=".8s">
+          {/* <div className="contact-info-items wow fadeInUp" data-wow-delay=".8s">
             <div className="icon">
               <i className="icon-icon-8"></i>
             </div>
@@ -53,7 +53,7 @@ const Footer = ({ data, assetsPath, mediaPath, local }) => {
                 4517 Washington ave.
               </h3>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="footer-widgets-wrapper">
@@ -89,25 +89,25 @@ const Footer = ({ data, assetsPath, mediaPath, local }) => {
                 </div>
                 <ul className="list-area">
                   <li>
-                    <Link href="/home">
+                    <Link href={`/${local}`}>
                       <i className="fa-solid fa-chevrons-left"></i>
                       {Lang('public.home')}
                     </Link>
                   </li>
                   <li>
-                    <Link href="/books">
+                    <Link href={`/${local}/books`}>
                       <i className="fa-solid fa-chevrons-left"></i>
                       {Lang('public.books')}
                     </Link>
                   </li>
                   <li>
-                    <Link href="/blog">
+                    <Link href={`/${local}/blog`}>
                       <i className="fa-solid fa-chevrons-left"></i>
                       {Lang('public.blog')}
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact">
+                    <Link href={`/${local}/contact`}>
                       <i className="fa-solid fa-chevrons-left"></i>
                       {Lang('public.contact')}
                     </Link>
@@ -122,7 +122,7 @@ const Footer = ({ data, assetsPath, mediaPath, local }) => {
                 </div>
                 <ul className="list-area">
                   <li>
-                    <Link href="/home">
+                    <Link href="">
                       <i className="fa-solid fa-chevrons-left"></i>
                       {Lang('public.home')}
                     </Link>

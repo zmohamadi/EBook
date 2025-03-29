@@ -39,33 +39,41 @@ export const ItemPage = ({ mediaPath, local, Lang, page = "1" }) => {
         //     <LoadingPage />
         // :
             <>
-                {(newBlogs?.data)?.map((item,index)=>{
-                    return (
-                        <>
-                            <div className="col-lg-6 col-md-6 m-lg-b30 m-b50 wow fadeInUp" key={index} data-wow-delay={`${0.1 * (index + 1)}s`} >
-                                <div className="dz-card style-5 light">
-                                    <div className="dz-media">
-                                        <img src={mediaPath+"/blog/"+item?.thumb} alt="/" />
-                                    </div>
-                                    <div className="dz-info">
-                                        <div className="dz-meta">
-                                            <ul>
-                                                <li className="post-date">{item?.created_at}</li>
-                                            </ul>
-                                        </div>
-                                        <h4 className="dz-title">
-                                            <Link href={`/${local}/blog/${item?.id}`}>{item?.title}</Link>
-                                        </h4>
-                                        <span className="font-28">{Lang("public.subject")+" : "+item?.subject?.["title_"+local]}</span>
-                                        <Link href={`/${local}/blog/${item?.id}`} className="font-14 read-btn">{Lang("public.read_more")}
-                                            <i className="icon feather icon-chevron-right"></i>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </>
-                    );
-                })}
+                 {newBlogs?.data?.map((post, index) => (
+            <div 
+              key={post.id}
+              className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" 
+              data-wow-delay={`${0.2 + (index * 0.2)}s`}
+            >
+              <div className="news-card-items">
+                <div className="news-image">
+                  <img src={`${mediaPath}/blogs/${post.image}`} alt="img" />
+                  <img src={`${mediaPath}/blogs/${post.image}`} alt="img" />
+                  <div className="post-box">
+                    {post?.subject?.title_fa}
+                  </div>
+                </div>
+                <div className="news-content">
+                  <ul>
+                    <li>
+                      <i className="fa-light fa-calendar-days"></i>
+                      {post.created_at}
+                    </li>
+                    {/* <li>
+                      <i className="fa-regular fa-user"></i>
+                      By {post.author}
+                    </li> */}
+                  </ul>
+                  <h3>
+                    <Link href={`/${local}/blog/${post.id}`}>{post.title}</Link>
+                  </h3>
+                  <Link href={`/${local}/blog/${post.id}`} className="theme-btn-2">
+                  {Lang('public.read')} {Lang('public.more')} <i className="fa-regular fa-arrow-left-long"></i>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
                 {
                     loadmore == "end" ?
                         <div></div>

@@ -51,21 +51,15 @@ export default function Page({ params }) {
 
     return(
         <>
-            <div className="page-content bg-light">
                 <Banner assetsPath={assetsPath} local={local} Lang={Lang} />
-            </div>
-            <section className="content-inner-1 z-index-unset">
-                <div className="container">
-                    <div className="row">
-                        <SideBar assetsPath={assetsPath} mediaPath={mediaPath} local={local} Lang={Lang} />
-                        <div className="col-xl-8 col-lg-8">
-                            <div className="row">
+                <section class="news-section fix section-padding">
+                <div class="container">
+                <div class="row g-4">
                                 {(loading)? <LoadingPage /> : <ItemPage mediaPath={mediaPath} local={local} Lang={Lang} />}
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+</section>
+                    
         </>
     );
 }

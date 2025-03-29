@@ -100,7 +100,7 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
             <ul className="contact-list">
               <li>
                 <i className="fa-regular fa-phone"></i>
-                <a href="tel:+20866660112">+208-6666-0112</a>
+                <a href="tel:021-8934532" className='fa-num'>021-8934532</a>
               </li>
               <li>
                 <i className="far fa-envelope"></i>
@@ -108,14 +108,14 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
               </li>
               <li>
                 <i className="far fa-clock"></i>
-                <span>Sunday - Fri: 9 aM - 6 pM</span>
+                <span>شنبه تا چهارشنبه - 9 تا 17</span>
               </li>
             </ul>
             <ul className="list">
               {/* <li><i className="fa-light fa-comments"></i><a href="contact.html">Live Chat</a></li> */}
               <li><i className="fa-light fa-user"></i>
                 <button onClick={toggleLoginModal}>
-                  Login
+                {Lang('public.login')}
                 </button>
               </li>
             </ul>
@@ -163,16 +163,16 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
                               </ul>
                             </li> */}
                             <li>
-                              <a href={`${local}/home`}>{Lang('public.home')}</a>
+                              <a href={`/${local}`}>{Lang('public.home')}</a>
                             </li>
                             <li>
-                              <a href={`${local}/books`}>{Lang('public.books')}</a>
+                              <a href={`/${local}/books`}>{Lang('public.books')}</a>
                             </li>
                             <li>
-                              <a href={`${local}/blog`}>{Lang('public.blog')}</a>
+                              <a href={`/${local}/blog`}>{Lang('public.blog')}</a>
                             </li>
                             <li>
-                              <a href={`${local}/contact`}>{Lang('public.contact')}</a>
+                              <a href={`/${local}/contact`}>{Lang('public.contact')}</a>
                             </li>
                           </ul>
                         </nav>
@@ -212,7 +212,7 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
                       <div className="header-humbager ml-30">
                         <a className="sidebar__toggle" href="javascript:void(0)" onClick={toggleOffcanvas}>
                           <div className="bar-icon-2">
-                            <img  src={`${assetsPath}/img/logo/icon-13.svg`} alt="img" />
+                            <img  src={`${assetsPath}/img/icon/icon-13.svg`} alt="img" />
                           </div>
                         </a>
                       </div>
@@ -301,10 +301,10 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
                             <li>
                               <a href="contact.html">Contact</a>
                             </li> */}
-                            <li><a href={`${local}/home`}>{Lang('public.home')}</a></li>
-                            <li><a href={`${local}/books`}>{Lang('public.books')}</a></li>
-                            <li><a href={`${local}/blog`}>{Lang('public.blog')}</a></li>
-                            <li><a href={`${local}/contact`}>{Lang('public.contact')}</a></li>
+                            <li><a href={`/${local}`}>{Lang('public.home')}</a></li>
+                            <li><a href={`/${local}/books`}>{Lang('public.books')}</a></li>
+                            <li><a href={`/${local}/blog`}>{Lang('public.blog')}</a></li>
+                            <li><a href={`/${local}/contact`}>{Lang('public.contact')}</a></li>
                           </ul>
                         </nav>
                       </div>
@@ -357,7 +357,7 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
       </header>
 
       {/* Login Modal */}
-      {isLoginModalOpen && (
+      {/* {isLoginModalOpen && (
         <div className="modal show" id="loginModal" tabIndex="-1" aria-labelledby="loginModalLabel" style={{ display: 'block' }}>
           <div className="modal-dialog">
             <div className="modal-content">
@@ -405,7 +405,7 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
                   </div>
 
                   <div className="banner">
-                    <button type="button" className="rounded-0 login-btn" onClick={toggleLoginModal}>Log in</button>
+                    <button type="button" className="rounded-0 login-btn" onClick={toggleLoginModal}>{Lang('public.login')}</button>
                     <button type="button" className="theme-btn rounded-0 register-btn" onClick={() => {
                       toggleLoginModal();
                       toggleRegisterModal();
@@ -421,10 +421,10 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
       
       {/* Registration Modal */}
-      {isRegisterModalOpen && (
+      {/* {isRegisterModalOpen && (
         <div className="modal show" id="registrationModal" tabIndex="-1" aria-labelledby="registrationModalLabel" style={{ display: 'block' }}>
           <div className="modal-dialog">
             <div className="modal-content">
@@ -489,7 +489,7 @@ const Header = ({ data, assetsPath, mediaPath, local }) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };

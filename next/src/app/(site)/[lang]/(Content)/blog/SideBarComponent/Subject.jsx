@@ -11,21 +11,27 @@ export const Subject = ({ local, Lang }) => {
 
 	return(
 		<>
-			<div className="widget widget_categories style-1">
-				<h5 className="widget-title">{Lang("public.subject")}</h5>
-				<ul>
-					{state?.subjects?.map((item,index)=>{
+		<div class="single-sidebar-widget">
+                                <div class="wid-title">
+                                    <h3>{Lang("public.subjects")}</h3>
+                                </div>
+                                <div class="news-widget-categories">
+                                    <ul>
+									{state?.subjects?.map((item,index)=>{
 						return(
 							<>
-								<li className="cat-item" key={index}>
+								<li key={index}>
 									<a href="javascript:void(0);" onClick={()=>handleFilterSubject(item?.id)}>{item?.["title_"+local]}</a>
-									{"("+item?.count_blog+")"}
+									<span>{"("+item?.count_blog+")"}</span>
 								</li>
 							</>
 						);
 					})}
-				</ul>
-			</div>
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+			
     	</>
 	);
 };

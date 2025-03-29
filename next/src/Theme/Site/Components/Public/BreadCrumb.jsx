@@ -12,25 +12,35 @@ export const BreadCrumb = ({ brName="",local }) => {
 	
 	return(
 		<>
-			<nav aria-label="breadcrumb" className="breadcrumb-row">
-				<ul className="breadcrumb">
-					{url?.map((nameUrl, index)=>{
+		<div class="page-header">
+                    <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
+                        {/* <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li> */}
+						{url?.map((nameUrl, index)=>{
 						if(nameUrl != "" && items[nameUrl] != undefined) 
 						{
 							let length = url?.length;
 							let i = index+1;
-							let display = (length == i)?
-								<li className="breadcrumb-item">{Lang("public."+items[nameUrl][1])}</li>
+							let display = (length == i)?<>
+								<i class="fa-solid fa-chevron-left"></i>
+								<li>{Lang("public."+items[nameUrl][1])}</li>
+							</>
 							:
-								<li className="breadcrumb-item"><a href={items[nameUrl][0]}>{Lang("public."+items[nameUrl][1])}</a></li>
+								<li><a href={items[nameUrl][0]}>{Lang("public."+items[nameUrl][1])}</a></li>
 							return(
 								display
 							);
 						}
 					})}
-					{(brName!="")&& <li className="breadcrumb-item">{brName}</li>}
-				</ul>
-			</nav>
+					{(brName!="")&& <li>{brName}</li>}
+                    </ul>
+                </div>
     	</>
 	);
 }

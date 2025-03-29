@@ -24,6 +24,7 @@
   text-transform: none;
   line-height: 1em;
   margin-left: .2em;
+  margin-top: 0.5em;
   /* better font rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

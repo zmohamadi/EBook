@@ -13,21 +13,18 @@ export const Search = ({ Lang }) => {
 
     return(
 		<>
-			<div className="widget">
-				<h5 className="widget-title">{Lang("public.search_title")}</h5>
-				<div className="search-bx">
-					{/* <form role="search" method="post"> */}
-						<div className="input-group">
-							<input name="text" className="form-control" placeholder={Lang("public.search_blog")} type="text" onKeyDown={handleFilter}/>
-							<span className="input-group-btn">
-									<button className="btn">
-									<i className="icon feather icon-search"></i>
-								</button>
-							</span>
-						</div>
-					{/* </form> */}
-				</div>
+		<div class="single-sidebar-widget">
+			<div class="wid-title">
+				<h3>{Lang("public.search_title")}</h3>
 			</div>
+			<div class="search-widget">
+				<form action="#">
+					<input placeholder={Lang("public.search_blog")} type="text" onKeyDown={handleFilter}/>
+					<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+				</form>
+			</div>
+		</div>
+			
     	</>
 	);
 }

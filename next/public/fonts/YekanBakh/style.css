@@ -70,6 +70,13 @@
     url('Fa-En/YekanBakhFa-En08Fat.woff') format('woff'), 
     url('Fa-En/YekanBakhFa-En08Fat.ttf') format('truetype');
 }
+@font-face {
+	font-family: YekanBakh;
+	font-style: normal;
+	font-weight: 200;
+	src: url('FaNum/Yekan\ Bakh\ FaNum\ 04\ Regular.eot');
+	src: url('FaNum/Yekan\ Bakh\ FaNum\ 04\ Regular.woff');
+}
 
 .fc-toolbar-chunk h2.fc-toolbar-title{
 	font-size: 1rem !important;
