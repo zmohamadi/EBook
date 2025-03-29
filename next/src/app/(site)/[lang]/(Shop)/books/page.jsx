@@ -4,9 +4,9 @@ import React, { useContext,useEffect } from 'react';
 import { useLang } from "@/lib/lang";
 import { useConfig } from "@/lib/config";
 import { ProductContext } from '@/Theme/Site/ShopTools/Context/ProductContext';
-import { Banner } from "@/app/(site)/[lang]/(Shop)/products/Banner";
-import { Product } from "@/app/(site)/[lang]/(Shop)/products/Product";
-import { SideBar } from "@/app/(site)/[lang]/(Shop)/products/SideBar";
+import { Banner } from "@/app/(site)/[lang]/(Shop)/books/Banner";
+import { Product } from "@/app/(site)/[lang]/(Shop)/books/Product";
+import { SideBar } from "@/app/(site)/[lang]/(Shop)/books/SideBar";
 
 export default function Page({ params }) {
     const { Lang } = useLang();
@@ -21,7 +21,36 @@ export default function Page({ params }) {
 
     return(
         <>
-            <!-- Shop Section Start -->
+            {/* Breadcumb Section Start */}
+            <div class="breadcrumb-wrapper">
+                <div class="book1">
+                    <img src="assets/img/hero/book1.png" alt="book"/>
+                </div>
+                <div class="book2">
+                    <img src="assets/img/hero/book2.png" alt="book"/>
+                </div>
+                <div class="container">
+                    <div class="page-heading">
+                        <h1>Shop Default</h1>
+                        <div class="page-header">
+                            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
+                                <li>
+                                    <a href="index.html">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </li>
+                                <li>
+                                    Shop Default
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Shop Section Start */}
             <section class="shop-section fix section-padding">
                 <div class="container">
                     <div class="shop-default-wrapper">
@@ -66,7 +95,7 @@ export default function Page({ params }) {
                                         </div>
                                         <form action="#" class="search-toggle-box">
                                             <div class="input-area search-container">
-                                                <input class="search-input" type="text" placeholder="Search here">
+                                                <input class="search-input" type="text" placeholder="Search here"/>
                                                 <button class="cmn-btn search-icon">
                                                     <i class="far fa-search"></i>
                                                 </button>
@@ -173,11 +202,12 @@ export default function Page({ params }) {
                                         </div>
                                         <div class="range__barcustom">
                                             <div class="slider">
-                                                <div class="progress" style="left: 15.29%; right: 58.9%;"></div>
+                                                <div class="progress" style={{"left": "15.29%", "right": "58.9%"}}></div>
+                                                {/* <div class="progress" style="left: 15.29%; right: 58.9%;"></div> */}
                                             </div>
                                             <div class="range-input">
-                                                <input type="range" class="range-min" min="0" max="10000" value="2500">
-                                                <input type="range" class="range-max" min="100" max="10000" value="7500">
+                                                <input type="range" class="range-min" min="0" max="10000" value="2500"/>
+                                                <input type="range" class="range-max" min="100" max="10000" value="7500"/>
                                             </div>
                                             <div class="range-items">
                                                 <div class="price-input">
@@ -188,12 +218,12 @@ export default function Page({ params }) {
                                                         </div>
                                                         <div class="field">
                                                             <span>$</span>
-                                                            <input type="number" class="input-min" value="100">
+                                                            <input type="number" class="input-min" value="100"/>
                                                         </div>
                                                         <div class="separators">-</div>
                                                         <div class="field">
                                                             <span>$</span>
-                                                            <input type="number" class="input-max" value="1000">
+                                                            <input type="number" class="input-max" value="1000"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -208,7 +238,7 @@ export default function Page({ params }) {
                                             <label class="checkbox-single d-flex align-items-center">
                                                 <span class="d-flex gap-xl-3 gap-2 align-items-center">
                                                     <span class="checkbox-area d-center">
-                                                        <input type="checkbox">
+                                                        <input type="checkbox"/>
                                                         <span class="checkmark d-center"></span>
                                                     </span>
                                                     <span class="text-color">
@@ -226,7 +256,7 @@ export default function Page({ params }) {
                                             <label class="checkbox-single d-flex align-items-center">
                                                 <span class="d-flex gap-xl-3 gap-2 align-items-center">
                                                     <span class="checkbox-area d-center">
-                                                        <input type="checkbox">
+                                                        <input type="checkbox"/>
                                                         <span class="checkmark d-center"></span>
                                                     </span>
                                                     <span class="text-color">
@@ -244,7 +274,7 @@ export default function Page({ params }) {
                                             <label class="checkbox-single d-flex align-items-center">
                                                 <span class="d-flex gap-xl-3 gap-2 align-items-center">
                                                     <span class="checkbox-area d-center">
-                                                        <input type="checkbox">
+                                                        <input type="checkbox"/>
                                                         <span class="checkmark d-center"></span>
                                                     </span>
                                                     <span class="text-color">
@@ -262,7 +292,7 @@ export default function Page({ params }) {
                                             <label class="checkbox-single d-flex align-items-center">
                                                 <span class="d-flex gap-xl-3 gap-2 align-items-center">
                                                     <span class="checkbox-area d-center">
-                                                        <input type="checkbox">
+                                                        <input type="checkbox"/>
                                                         <span class="checkmark d-center"></span>
                                                     </span>
                                                     <span class="text-color">
@@ -280,7 +310,7 @@ export default function Page({ params }) {
                                             <label class="checkbox-single d-flex align-items-center">
                                                 <span class="d-flex gap-xl-3 gap-2 align-items-center">
                                                     <span class="checkbox-area d-center">
-                                                        <input type="checkbox">
+                                                        <input type="checkbox"/>
                                                         <span class="checkmark d-center"></span>
                                                     </span>
                                                     <span class="text-color">
@@ -307,7 +337,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details.html"><img src="assets/img/book/01.png" alt="img"></a>
+                                                        <a href="shop-details.html"><img src="assets/img/book/01.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 Hot
@@ -323,7 +353,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -350,7 +380,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -358,7 +388,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -385,7 +415,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -393,7 +423,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -423,7 +453,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -436,7 +466,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -463,7 +493,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -471,7 +501,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -498,7 +528,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -511,7 +541,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -538,7 +568,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -546,7 +576,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -573,7 +603,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -581,7 +611,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -608,7 +638,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -616,7 +646,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -643,7 +673,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -651,7 +681,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -678,7 +708,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -686,7 +716,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -713,7 +743,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -721,7 +751,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -753,7 +783,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/01.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/01.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 Hot
@@ -769,7 +799,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -796,7 +826,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -804,7 +834,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -831,7 +861,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -839,7 +869,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -869,7 +899,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -882,7 +912,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -909,7 +939,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -917,7 +947,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -944,7 +974,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -957,7 +987,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -984,7 +1014,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -992,7 +1022,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1019,7 +1049,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1027,7 +1057,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1054,7 +1084,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1062,7 +1092,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1089,7 +1119,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1097,7 +1127,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1124,7 +1154,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1132,7 +1162,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1159,7 +1189,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1167,7 +1197,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1199,7 +1229,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/01.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/01.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 Hot
@@ -1215,7 +1245,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1242,7 +1272,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1250,7 +1280,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1277,7 +1307,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1285,7 +1315,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1315,7 +1345,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -1328,7 +1358,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1355,7 +1385,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1363,7 +1393,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1390,7 +1420,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -1403,7 +1433,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1430,7 +1460,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1438,7 +1468,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1465,7 +1495,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1473,7 +1503,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1500,7 +1530,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1508,7 +1538,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1535,7 +1565,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1543,7 +1573,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1570,7 +1600,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1578,7 +1608,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1605,7 +1635,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1613,7 +1643,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1645,7 +1675,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/01.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/01.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 Hot
@@ -1661,7 +1691,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1688,7 +1718,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1696,7 +1726,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1723,7 +1753,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1731,7 +1761,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1761,7 +1791,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -1774,7 +1804,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1801,7 +1831,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1809,7 +1839,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1836,7 +1866,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -1849,7 +1879,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1876,7 +1906,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1884,7 +1914,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1911,7 +1941,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1919,7 +1949,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1946,7 +1976,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1954,7 +1984,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -1981,7 +2011,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -1989,7 +2019,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2016,7 +2046,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2024,7 +2054,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2051,7 +2081,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2059,7 +2089,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2091,7 +2121,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/01.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/01.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 Hot
@@ -2107,7 +2137,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2134,7 +2164,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2142,7 +2172,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2169,7 +2199,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2177,7 +2207,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2207,7 +2237,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -2220,7 +2250,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2247,7 +2277,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2255,7 +2285,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2282,7 +2312,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -2295,7 +2325,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2322,7 +2352,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2330,7 +2360,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2357,7 +2387,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2365,7 +2395,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2392,7 +2422,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2400,7 +2430,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2427,7 +2457,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2435,7 +2465,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2462,7 +2492,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2470,7 +2500,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2497,7 +2527,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2505,7 +2535,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2537,7 +2567,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/01.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/01.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 Hot
@@ -2553,7 +2583,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2580,7 +2610,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2588,7 +2618,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2615,7 +2645,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2623,7 +2653,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2653,7 +2683,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -2666,7 +2696,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2693,7 +2723,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2701,7 +2731,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2728,7 +2758,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/04.png" alt="img"/></a>
                                                         <ul class="post-box">
                                                             <li>
                                                                 -12%
@@ -2741,7 +2771,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2768,7 +2798,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2776,7 +2806,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2803,7 +2833,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2811,7 +2841,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2838,7 +2868,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/06.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2846,7 +2876,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2873,7 +2903,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/02.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2881,7 +2911,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2908,7 +2938,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/03.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2916,7 +2946,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>
@@ -2943,7 +2973,7 @@ export default function Page({ params }) {
                                             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                                                 <div class="shop-box-items">
                                                     <div class="book-thumb center">
-                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"></a>
+                                                        <a href="shop-details"><img src="assets/img/book/05.png" alt="img"/></a>
                                                         <ul class="shop-icon d-grid justify-content-center align-items-center">
                                                             <li>
                                                                 <a href="shop-cart.html"><i class="far fa-heart"></i></a>
@@ -2951,7 +2981,7 @@ export default function Page({ params }) {
                                                             <li>
                                                                 <a href="shop-cart.html">
                                                                     <img class="icon" src="assets/img/icon/shuffle.svg"
-                                                                        alt="svg-icon">
+                                                                        alt="svg-icon"/>
                                                                 </a>
                                                             </li>
                                                             <li>

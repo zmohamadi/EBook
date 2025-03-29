@@ -2,7 +2,7 @@
 
 import React, { useContext, useEffect } from 'react';
 import { ProductContext } from '@/Theme/Site/ShopTools/Context/ProductContext';
-import { List,Column,Grid,FilterRight,FilterLeft } from "@/app/(site)/[lang]/(Shop)/products/ProductComponent";
+import { List,Column,Grid,FilterRight,FilterLeft } from "@/app/(site)/[lang]/(Shop)/books/ProductComponent";
 import { useData } from "@/Theme/Midone/Utils/Data";
 import LoadingPage from '@/Theme/Site/ShopTools/LoadingPage';
 
