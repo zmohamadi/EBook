@@ -48,6 +48,8 @@ export const Blog = ({ items, assetsPath, mediaPath, local, Lang }) => {
           <h2 className="mb-3 wow fadeInUp" data-wow-delay=".3s">{Lang('public.blog_title')}</h2>
           <p className="wow fadeInUp" data-wow-delay=".5s">
           {Lang('public.blog_p')}
+          <br/>
+          {Lang('public.blog_p1')}
           </p>
         </div>
         <div className="row">

@@ -31,8 +31,10 @@ Version: 1.0.0
 *** Testimonial   
 
 /*CSS Table Of Content Ends Here*/
-@import url("../../../../../https@fonts.googleapis.com/css2@family=Inter_3Awght_40100..900&family=Moon+Dance&display=swap");
-:root {
+@import url(http://127.0.0.1:3000/fonts/YekanBakh/style.css);
+
+/* @import url("../../../../../https@fonts.googleapis.com/css2@family=Inter_3Awght_40100..900&family=Moon+Dance&display=swap"); */
+/* :root {
   --body: #fff;
   --black: #000;
   --white: #fff;
@@ -46,6 +48,22 @@ Version: 1.0.0
   --bg: #D0E1E7;
   --bg2: #F5F5F5;
   --box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.06);
+} */
+
+:root {
+  --body: #ffffff;
+  --black: #000000;
+  --white: #ffffff;
+  --theme: #19afd9; /* سبزتر از قبل */
+  --theme2: #FF8C42; /* مکمل گرم */
+  --header: #146c94; /* تیره‌تر از رنگ اصلی */
+  --text: #3E4C57;
+  --border: #97E0D5;
+  --border-2: #B3EDE4;
+  --border-3: #C5F4EB;
+  --bg: #C5F4EB;
+  --bg2: #EFFAF8;
+  --box-shadow: 0px 4px 25px 0px rgba(24, 165, 143, 0.2);
 }
 
 .theme-btn {
@@ -145,7 +163,7 @@ Version: 1.0.0
     Template Default Fonts & Fonts Styles
  ---------------------------------------------- */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 16px;
   font-weight: normal;
   line-height: 28px;
@@ -183,7 +201,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   margin: 0px;
   padding: 0;
   color: var(--header);
@@ -888,7 +906,7 @@ span {
 }
 .modal-dialog .modal-content .modal-body .identityBox .form-wrapper h1 {
   color: #012E4A;
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -960,7 +978,7 @@ span {
 .modal-dialog .modal-content .modal-body .identityBox .form-wrapper .another-option p {
   display: inline-block;
   color: var(--header);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -979,7 +997,7 @@ span {
 .modal-dialog .modal-content .modal-body .identityBox .form-wrapper .input-check .checkbox-wrapper label {
   margin-right: 10px;
   color: #4F536C;
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -987,7 +1005,7 @@ span {
 }
 .modal-dialog .modal-content .modal-body .identityBox .form-wrapper .input-check text {
   color: var(--header);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1381,7 +1399,7 @@ span {
 .footer-bottom {
   position: relative;
   z-index: 9;
-  background: #036280;
+  background: #18A58F;
   padding: 18px 0;
 }
 @media (max-width: 767px) {
@@ -1789,7 +1807,7 @@ span {
   font-size: 14px;
   font-weight: 600;
   color: var(--text);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   margin-bottom: 5px;
 }
 .header-2-wrapper .header-2-right .menu-cart {
@@ -2256,7 +2274,7 @@ span {
 }
 .header-1 .header-main .main-menu ul li a {
   color: #241442;
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -2651,7 +2669,7 @@ span {
 }
 .header-2 .header-main .main-menu ul li a {
   color: #241442;
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -3960,7 +3978,7 @@ span {
 .hero-1 .hero-content h1 {
   position: relative;
   color: var(--header);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 74px;
   font-style: normal;
   font-weight: 700;
@@ -4013,7 +4031,7 @@ span {
 .hero-2 .hero-content h1 {
   position: relative;
   color: var(--header);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 74px;
   font-style: normal;
   font-weight: 700;
@@ -4743,7 +4761,7 @@ span {
   }
 }
 .preloader .animation-preloader .txt-loading {
-  font: bold 5em "Inter", sans-serif, "Inter", sans-serif;
+  font: bold 5em YekanBakh, YekanBakh;
   text-align: center;
   user-select: none;
 }
@@ -4783,7 +4801,7 @@ span {
   content: attr(data-text-preloader);
   right: 0;
   opacity: 0;
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   position: absolute;
   top: -3px;
   transform: rotateY(-90deg);
@@ -4893,7 +4911,7 @@ span {
   }
 }
 .section-title p {
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "YekanBakh", sans-serif;
 }
 
 .section-title-area {
@@ -5119,7 +5137,7 @@ span {
 }
 .shop-box-items.style-2 .shop-content h5 {
   color: var(--text);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -5128,7 +5146,7 @@ span {
 }
 .shop-box-items.style-2 .shop-content h3 {
   color: var(--header);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -5250,7 +5268,7 @@ span {
 }
 .shop-box-items.style-3 .shop-content .price-list li {
   color: var(--theme2);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -5259,7 +5277,7 @@ span {
 }
 .shop-box-items.style-3 .shop-content .price-list del {
   color: rgba(92, 112, 126, 0.8);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5268,7 +5286,7 @@ span {
 }
 .shop-box-items.style-3 .shop-content h5 {
   color: var(--text);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -5277,7 +5295,7 @@ span {
 }
 .shop-box-items.style-3 .shop-content h3 {
   color: var(--header);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -5413,7 +5431,7 @@ span {
 }
 .shop-box-items.style-4 .shop-content h5 {
   color: var(--text);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -5422,7 +5440,7 @@ span {
 }
 .shop-box-items.style-4 .shop-content h3 {
   color: var(--header);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 34px;
   font-style: normal;
   font-weight: 600;
@@ -5476,7 +5494,7 @@ span {
 }
 .shop-box-items.style-4 .shop-content .price-list li {
   color: var(--theme);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -5485,7 +5503,7 @@ span {
 }
 .shop-box-items.style-4 .shop-content .price-list del {
   color: rgba(92, 112, 126, 0.8);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5535,7 +5553,7 @@ span {
 }
 .shop-box-items.style-4 .shop-content p {
   color: var(--header);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -5750,7 +5768,7 @@ span {
 }
 .shop-box-items.style-2 .shop-content h5 {
   color: var(--text);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -5760,7 +5778,7 @@ span {
 }
 .shop-box-items.style-2 .shop-content h3 {
   color: var(--header);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -6080,7 +6098,7 @@ span {
 }
 .top-ratting-book-wrapper .top-ratting-box-items .book-content h5 {
   color: var(--text);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -7250,7 +7268,7 @@ span {
 }
 .shop-details-wrapper .single-tab .review-wrap-area .review-content .head-area .cont span {
   color: var(--text);
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -8069,7 +8087,7 @@ span {
 }
 .testimonial-card-items .client-info .content h3 {
   color: #121315;
-  font-family: "Inter", sans-serif;
+  font-family: YekanBakh;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -8115,3 +8133,13 @@ span {
 }/*# sourceMappingURL=main.css.map */
 
 
+.hero-image {
+  width: 100vw;
+  height: 80vh;
+  object-fit: cover;
+  display: block;
+}
+
+.header-logo img , .single-footer-widget img{
+  width: 170px;
+}
