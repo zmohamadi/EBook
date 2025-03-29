@@ -4,61 +4,73 @@ namespace Site\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use \Models\Content\Slider;
-use \Models\Product\Category;
-use \Models\Product\Brand;
-use \Models\Product\Product;
-use \Models\Content\BlogSubject;
 use \Models\Content\Blog;
 use \Models\Content\ContactUs;
+use \Models\Book\Book;
+use \Models\Book\Category;
+use \Models\Person\Author;
 
 class HomeController extends Controller
 {
+    /**
+     * نمایش صفحه اصلی
+     */
     public function index()
     {
         $items = [
             'sliders' => $this->slider(),
             'categories' => $this->category(),
-            'brands' => $this->brand(),
-            'lastProducts' => $this->lastProduct(),
-            'bestSellerProducts' => $this->bestSellerProduct(),
-            'mostVisitedProducts' => $this->mostVisitedProduct(),
+            'books' => $this->books(),
+            'blog' => $this->blog(),
+            'authors' => $this->authors(),
         ];
+        
         return response()->json($items);
     }
 
+    /**
+     * دریافت اسلایدرهای فعال
+     */
     public function slider()
     {
-        return Slider::active()->get();
-    }
-    public function category()
-    {
-        return Category::with("childs")->active()->get();
-    }
-    public function brand()
-    {
-        return Brand::active()->get();
-    }
-    public function lastProduct()
-    {
-        return Product::with("category")->active()->orderByDesc("id")->limit(8)->get();
+        return Slider::active()->orderBy('order')->get();
     }
 
-    public function bestSellerProduct()
+    /**
+     * دریافت دسته‌بندی‌های فعال با زیردسته‌ها
+     */
+    public function category()
     {
-        return Product::active()->orderByDesc("count_sell")->limit(4)->get();
+        return Category::active()->get();
     }
-    public function mostVisitedProduct()
+
+    /**
+     * دریافت کتاب‌های ویژه
+     */
+    public function books()
     {
-        return Product::with("category")->active()->orderByDesc("count_view")->limit(10)->get();
+        return Book::active()->with('authors','categories')->latest()->limit(10)->get();
     }
-    public function subject()
-    {
-        return BlogSubject::active()->get();
-    }
+
+    /**
+     * دریافت آخرین مطالب بلاگ
+     */
     public function blog()
     {
-        return Blog::active()->orderByDesc("id")->limit(5)->get();
+        return Blog::with('subject:id,title_fa')->active()->latest()->limit(4)->get();
     }
+
+    /**
+     * دریافت نویسندگان پرکار
+     */
+    public function authors()
+    {
+        return Author::withCount('books')
+            ->orderByDesc('books_count')
+            ->limit(10)
+            ->get();
+    }
+
     /**
      * get data menu
      */

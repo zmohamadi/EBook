@@ -17,6 +17,8 @@ return new class extends Migration
             $table->collation = 'utf8_persian_ci';
             $table->id();
             $table->string('name')->comment('نام دسته‌بندی');
+            $table->string('image');
+            $table->integer('book_count');
             $table->string('lang', 2)->default('fa')->comment('زبان');
             $table->integer('status_id')->default(1)->comment('وضعیت فعال/غیرفعال');
             $table->softDeletes();

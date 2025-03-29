@@ -3,11 +3,10 @@
  **/
 export * from './Home/Slider';
 export * from './Home/Category';
-export * from './Home/LastProducts';
-export * from './Home/BestSeller';
-export * from './Home/Line';
-export * from './Home/MostVisited';
-export * from './Home/Brand';
+export * from './Home/Authors';
+export * from './Home/Books';
+export * from './Home/CtaBanner';
+export * from './Home/Blog';
 
 /**
  * Public exports 

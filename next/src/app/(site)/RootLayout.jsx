@@ -6,27 +6,31 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { useEffect, useState } from "react";
 import { useConfig } from "@/lib/config";
+// import { useLang } from "@/lib/lang";
 import { config } from "@/lib";
 import { usePathname } from 'next/navigation';
 import Loading from './Loading';
+import Header from '@/Theme/Site/Components/Public/Header';
+import Footer from '@/Theme/Site/Components/Public/Footer';
 
 
-// کامپوننت‌های Header و Footer را به صورت داینامیک import می‌کنیم
-const Header = dynamic(() => import('@/Theme/Site/Components/Public/Header'), { 
-  loading: () => <Loading />,
-  ssr: false
-});
+// // کامپوننت‌های Header و Footer را به صورت داینامیک import می‌کنیم
+// const Header = dynamic(() => import('@/Theme/Site/Components/Public/Header'), { 
+//   loading: () => <Loading />,
+//   ssr: false
+// });
 
-const Footer = dynamic(() => import('@/Theme/Site/Components/Public/Footer'), {
-  loading: () => <Loading />,
-  ssr: false
-});
+// const Footer = dynamic(() => import('@/Theme/Site/Components/Public/Footer'), {
+//   loading: () => <Loading />,
+//   ssr: false
+// });
 
 const StoreProvider = dynamic(() => import("@/redux/StoreProvider"))
 const store = dynamic(() => import("@/redux/store"))
 const App = dynamic(() => import("@/app/(shop-panel)/App").then((module) => module.App));
 
 export default function RootLayout({ children }) {
+  // const { Lang } = useLang();
   const pathname = usePathname();
   const pathParams = pathname.split("/")
   const local = (pathParams.length > 1) ? pathParams[1] : "fa";
@@ -63,7 +67,7 @@ export default function RootLayout({ children }) {
           <link rel="stylesheet" href={`${assetsPath}/css/swiper-bundle.min.css`} />
           <link rel="stylesheet" href={`${assetsPath}/css/nice-select.css`} />
           <link rel="stylesheet" href={`${assetsPath}/css/icomoon.css`} />
-          <link rel="stylesheet" href={`${assetsPath}/css/main.css`} />
+          {/* <link rel="stylesheet" href={`${assetsPath}/css/main.css`} /> */}
           
           {/* RTL CSS if needed */}
           {local == "fa" && <link rel="stylesheet" href={`${assetsPath}/css/main.rtl.css`} />}
@@ -75,13 +79,13 @@ export default function RootLayout({ children }) {
 
           <StoreProvider store={store}>
             <App load={() => <Loading assetsPath={assetsPath} />} key={Math.random()}>
-              <Header data={data} assetsPath={assetsPath} mediaPath={mediaPath} local={local} />
+              <Header assetsPath={assetsPath} mediaPath={mediaPath} local={local} />
               
               <div className="page-content">
                 {children}
               </div>
               
-              <Footer data={data} assetsPath={assetsPath} mediaPath={mediaPath} local={local} />
+              <Footer assetsPath={assetsPath} mediaPath={mediaPath} local={local} />
             </App>
           </StoreProvider>
 

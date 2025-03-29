@@ -35,7 +35,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function books()
     {
         // return $this->belongsToMany(\Models\Book\Book::class, 'book_creator')->withPivot('role_id'); // این بود و طبق بررسی تغییر دادم
-        return $this->belongsToMany(\Models\Book\Book::class, 'book_user')->withPivot('type');
+        return $this->belongsToMany(\Models\Book\Book::class, 'book_user','user_id')->withPivot('type');
     }
 
     function role()

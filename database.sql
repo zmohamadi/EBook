@@ -532,7 +532,7 @@ insert  into `base_countries`(`id`,`name_en`,`nationality_en`,`name_fa`,`nationa
 (251,NULL,NULL,'ایران','ایرانی',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,'2025-03-17 13:02:44',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL),
 (252,NULL,NULL,'عراق','عرافی',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,'2025-03-17 13:03:32',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL),
 (253,NULL,NULL,'افغانستان','افغانستانی',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,'2025-03-17 13:03:21',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL),
-(254,NULL,NULL,'انگلیس','انگلیسی',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,'2025-03-17 13:03:24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
+(254,NULL,NULL,'انگلیس','انگلیسی',NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,'2025-03-17 09:38:05',NULL,'2025-03-17 09:38:05',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL);
 
 /*Table structure for table `base_languages` */
 
@@ -673,27 +673,30 @@ DROP TABLE IF EXISTS `book_categories`;
 CREATE TABLE `book_categories` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_persian_ci NOT NULL COMMENT 'نام دسته‌بندی',
+  `image` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `book_count` int(11) DEFAULT 0,
   `lang` varchar(2) COLLATE utf8_persian_ci NOT NULL DEFAULT 'fa' COMMENT 'زبان',
   `status_id` int(11) NOT NULL DEFAULT 1 COMMENT 'وضعیت فعال/غیرفعال',
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 /*Data for the table `book_categories` */
 
-insert  into `book_categories`(`id`,`name`,`lang`,`status_id`,`deleted_at`,`created_at`,`updated_at`) values 
-(1,'رمان','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(2,'تاریخی','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(3,'علمی-تخیلی','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(4,'فلسفه','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(5,'روانشناسی','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(6,'توسعه فردی','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(7,'ادبیات کلاسیک','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(8,'داستان کوتاه','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(9,'هنر و سینما','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(10,'کودک و نوجوان','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13');
+insert  into `book_categories`(`id`,`name`,`image`,`book_count`,`lang`,`status_id`,`deleted_at`,`created_at`,`updated_at`) values 
+(1,'رمان','01.png',12,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(2,'تاریخی','02.png',33,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(3,'علمی-تخیلی','03.png',56,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(4,'فلسفه','04.png',34,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(5,'روانشناسی','05.png',2,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(6,'توسعه فردی','02.png',4,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(7,'ادبیات کلاسیک','01.png',56,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(8,'داستان کوتاه','03.png',46,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(9,'هنر و سینما','04.png',23,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(10,'کودک و نوجوان','05.png',23,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-17 09:41:05'),
+(11,'سلام','',45,'fa',1,'2025-03-17 09:41:34','2025-03-17 09:41:34','2025-03-17 09:41:34');
 
 /*Table structure for table `book_category` */
 
@@ -709,6 +712,8 @@ CREATE TABLE `book_category` (
 /*Data for the table `book_category` */
 
 insert  into `book_category`(`book_id`,`category_id`) values 
+(1,2),
+(2,3),
 (3,5),
 (4,1),
 (4,2),
@@ -754,7 +759,7 @@ CREATE TABLE `book_publishers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 /*Data for the table `book_publishers` */
 
@@ -768,7 +773,8 @@ insert  into `book_publishers`(`id`,`name`,`lang`,`status_id`,`deleted_at`,`crea
 (7,'انتشارات مرکز','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
 (8,'انتشارات علمی و فرهنگی','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
 (9,'انتشارات نگاه','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(10,'انتشارات کتاب پارسه','fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13');
+(10,'انتشارات کتاب پارسه','fa',1,'2025-03-17 09:40:14','2025-03-16 09:29:13','2025-03-17 09:40:14'),
+(11,'ثقفثقف','fa',1,'2025-03-17 09:42:30','2025-03-17 09:42:14','2025-03-17 09:42:30');
 
 /*Table structure for table `book_reviews` */
 
@@ -814,6 +820,8 @@ CREATE TABLE `book_user` (
 /*Data for the table `book_user` */
 
 insert  into `book_user`(`book_id`,`user_id`,`type`) values 
+(1,8,1),
+(2,9,1),
 (3,5,1),
 (3,7,1),
 (3,8,1),
@@ -863,11 +871,11 @@ CREATE TABLE `books` (
 /*Data for the table `books` */
 
 insert  into `books`(`id`,`title`,`publisher_id`,`publication_year`,`original_price`,`discounted_price`,`introduction`,`recommended_audience`,`excerpt`,`sample_file`,`file`,`type`,`file_type`,`page_count`,`duration`,`file_size`,`publication_status`,`image`,`rating`,`rating_count`,`view_count`,`lang`,`status_id`,`deleted_at`,`created_at`,`updated_at`) values 
-(1,'شازده کوچولو',1,'۱۴۰۱',45000.00,40000.00,'شازده کوچولو کتابی است که توسط آنتوان دو سنت اگزوپری نوشته شده و به مفاهیم عمیق انسانی می‌پردازد.','این کتاب برای تمام سنین، به ویژه علاقه‌مندان به ادبیات و فلسفه توصیه می‌شود.','همه بزرگ‌سالان ابتدا کودک بوده‌اند، اما تعداد کمی از آن‌ها این را به یاد می‌آورند.','http://example.com/sample1.pdf','http://example.com/book1.pdf',1,2,96,NULL,1024000,'published','http://example.com/shazdeh_kocholo.jpg',4.80,500,10000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(2,'صد سال تنهایی',2,'۱۴۰۰',60000.00,55000.00,'رمانی از گابریل گارسیا مارکز که به عنوان یکی از شاهکارهای ادبیات جهان شناخته می‌شود.','این کتاب برای علاقه‌مندان به رمان‌های کلاسیک و ادبیات آمریکای لاتین توصیه می‌شود.','سال‌ها بعد، مقابل جوخه‌ی اعدام، سرهنگ آئورلیانو بوئندیا بعدازظهر دوردستی را به یاد می‌آورد که پدرش او را برای کشف یخ برد.','http://example.com/sample2.pdf','http://example.com/book2.pdf',1,1,417,NULL,2048000,'published','http://example.com/sad_sal_tanhai.jpg',4.70,700,15000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
-(3,'کتاب صوتی هنر شفاف اندیشیدن',3,'1402',70000.00,65000.00,'کتابی از رولف دوبلی که به بررسی خطاهای شناختی و نحوه تفکر شفاف می‌پردازد.','این کتاب برای علاقه‌مندان به روانشناسی و توسعه فردی توصیه می‌شود.','ما اغلب فکر می‌کنیم که تصمیم‌هایمان منطقی هستند، اما در واقع تحت تأثیر خطاهای شناختی قرار داریم.','http://example.com/sample3.mp3','http://example.com/book3.mp3',2,NULL,NULL,14400,512000,'1','http://example.com/art_of_thinking.jpg',4.60,300,8000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-17 07:15:41'),
-(4,'1984',4,'1399',55000.00,50000.00,'رمانی از جورج اورول که به بررسی جامعه‌ای توتالیتر و کنترل‌شده می‌پردازد.','این کتاب برای علاقه‌مندان به ادبیات ضدآرمان‌شهری و فلسفه سیاسی توصیه می‌شود.','جنگ صلح است، آزادی بردگی است، نادانی قدرت است.','http://example.com/sample4.pdf','http://example.com/book4.pdf',1,NULL,328,34,1536000,'1','http://example.com/1984.jpg',4.90,1000,20000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-17 08:55:50'),
-(5,'انسان در جستجوی معنا',5,'1401',48000.00,43000.00,'کتابی از ویکتور فرانکل که به تجربیات او در اردوگاه کار اجباری و معنای زندگی می‌پردازد.','این کتاب برای علاقه‌مندان به روانشناسی و فلسفه زندگی توصیه می‌شود.','هر چیزی را می‌توان از انسان گرفت، به جز یک چیز: آزادی انتخاب نحوه برخورد با شرایط.','http://example.com/sample5.pdf','http://example.com/book5.pdf',2,2,200,780,1024000,'1','http://example.com/man_search.jpg',4.80,600,12000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-17 09:22:55');
+(1,'شازده کوچولو',1,'۱۴۰۱',45000.00,40000.00,'شازده کوچولو کتابی است که توسط آنتوان دو سنت اگزوپری نوشته شده و به مفاهیم عمیق انسانی می‌پردازد.','این کتاب برای تمام سنین، به ویژه علاقه‌مندان به ادبیات و فلسفه توصیه می‌شود.','همه بزرگ‌سالان ابتدا کودک بوده‌اند، اما تعداد کمی از آن‌ها این را به یاد می‌آورند.','http://example.com/sample1.pdf','http://example.com/book1.pdf',1,2,96,NULL,1024000,'published','01.png',4.80,500,10000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(2,'صد سال تنهایی',2,'۱۴۰۰',60000.00,55000.00,'رمانی از گابریل گارسیا مارکز که به عنوان یکی از شاهکارهای ادبیات جهان شناخته می‌شود.','این کتاب برای علاقه‌مندان به رمان‌های کلاسیک و ادبیات آمریکای لاتین توصیه می‌شود.','سال‌ها بعد، مقابل جوخه‌ی اعدام، سرهنگ آئورلیانو بوئندیا بعدازظهر دوردستی را به یاد می‌آورد که پدرش او را برای کشف یخ برد.','http://example.com/sample2.pdf','http://example.com/book2.pdf',1,1,417,NULL,2048000,'published','02.png',4.70,700,15000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-16 09:29:13'),
+(3,'کتاب صوتی هنر شفاف اندیشیدن',3,'1402',70000.00,65000.00,'کتابی از رولف دوبلی که به بررسی خطاهای شناختی و نحوه تفکر شفاف می‌پردازد.','این کتاب برای علاقه‌مندان به روانشناسی و توسعه فردی توصیه می‌شود.','ما اغلب فکر می‌کنیم که تصمیم‌هایمان منطقی هستند، اما در واقع تحت تأثیر خطاهای شناختی قرار داریم.','http://example.com/sample3.mp3','http://example.com/book3.mp3',2,NULL,NULL,14400,512000,'1','03.png',4.60,300,8000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-17 07:15:41'),
+(4,'1984',4,'1399',55000.00,50000.00,'رمانی از جورج اورول که به بررسی جامعه‌ای توتالیتر و کنترل‌شده می‌پردازد.','این کتاب برای علاقه‌مندان به ادبیات ضدآرمان‌شهری و فلسفه سیاسی توصیه می‌شود.','جنگ صلح است، آزادی بردگی است، نادانی قدرت است.','http://example.com/sample4.pdf','http://example.com/book4.pdf',1,NULL,328,34,1536000,'1','04.png',4.90,1000,20000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-17 08:55:50'),
+(5,'انسان در جستجوی معنا',5,'1401',48000.00,43000.00,'کتابی از ویکتور فرانکل که به تجربیات او در اردوگاه کار اجباری و معنای زندگی می‌پردازد.','این کتاب برای علاقه‌مندان به روانشناسی و فلسفه زندگی توصیه می‌شود.','هر چیزی را می‌توان از انسان گرفت، به جز یک چیز: آزادی انتخاب نحوه برخورد با شرایط.','http://example.com/sample5.pdf','http://example.com/book5.pdf',2,2,200,780,1024000,'1','05.png',4.80,600,12000,'fa',1,NULL,'2025-03-16 09:29:13','2025-03-17 09:22:55');
 
 /*Table structure for table `cache` */
 
@@ -1057,11 +1065,11 @@ CREATE TABLE `content_blogs` (
 /*Data for the table `content_blogs` */
 
 insert  into `content_blogs`(`id`,`title`,`subject_id`,`creator_id`,`editor_id`,`image`,`thumb`,`conclusion`,`summary`,`text`,`count_view`,`lang`,`status_id`,`deleted_at`,`created_at`,`updated_at`) values 
-(12,'کتاب‌های صوتی: راهی برای مطالعه در دنیای پرمشغله',2,1,1,'audio_books.jpg','audio_books_thumb.jpg',NULL,'کتاب‌های صوتی بهترین راه برای مطالعه در دنیای پرمشغله امروز هستند.','در دنیای امروز که زمان به شدت محدود است، کتاب‌های صوتی به یکی از محبوب‌ترین روش‌های مطالعه تبدیل شده‌اند. این کتاب‌ها به شما امکان می‌دهند در حین انجام کارهای روزمره مانند رانندگی یا ورزش، به مطالعه بپردازید.',0,'en',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(13,'چرا کتاب‌های الکترونیکی محبوب شده‌اند؟',3,1,1,'ebooks.jpg','ebooks_thumb.jpg',NULL,'کتاب‌های الکترونیکی به دلیل مزایای فراوان، محبوبیت زیادی پیدا کرده‌اند.','کتاب‌های الکترونیکی به دلیل قابلیت حمل آسان، دسترسی سریع و قیمت مناسب، جایگاه ویژه‌ای در میان علاقه‌مندان به کتاب پیدا کرده‌اند. این کتاب‌ها همچنین به حفظ محیط زیست کمک می‌کنند.',0,'en',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(14,'فواید کتابخوانی برای کودکان',4,1,1,'kids_reading.jpg','kids_reading_thumb.jpg',NULL,'کتابخوانی نقش مهمی در رشد فکری و اجتماعی کودکان دارد.','کتابخوانی نه تنها به افزایش دایره لغات کودکان کمک می‌کند، بلکه باعث تقویت قوه تخیل و خلاقیت آن‌ها نیز می‌شود. خواندن کتاب‌های داستانی به کودکان کمک می‌کند تا با احساسات و موقعیت‌های مختلف آشنا شوند.',0,'en',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(15,'تفاوت کتاب‌های صوتی و متنی',2,1,1,'audio_vs_text.jpg','audio_vs_text_thumb.jpg',NULL,'مقایسه کتاب‌های صوتی و متنی و مزایای هر کدام.','کتاب‌های صوتی برای افرادی که زمان کمی دارند یا ترجیح می‌دهند در حین انجام کارهای دیگر مطالعه کنند، گزینه مناسبی هستند. از طرفی، کتاب‌های متنی برای کسانی که به دنبال تمرکز بیشتر و درک عمیق‌تر مطالب هستند، مناسب‌ترند.',0,'en',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(16,'تاثیر کتاب‌های الکترونیکی بر صنعت نشر',3,1,1,'ebook_industry.jpg','ebook_industry_thumb.jpg',NULL,'کتاب‌های الکترونیکی چگونه صنعت نشر را متحول کرده‌اند.','با ظهور کتاب‌های الکترونیکی، صنعت نشر دستخوش تغییرات بزرگی شده است. این کتاب‌ها هزینه‌های چاپ و توزیع را کاهش داده‌اند و دسترسی به کتاب‌ها را برای همه آسان‌تر کرده‌اند.',0,'en',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16');
+(12,'کتاب‌های صوتی: راهی برای مطالعه در دنیای پرمشغله',4,1,1,'09.jpg','15.jpg',NULL,'کتاب‌های صوتی بهترین راه برای مطالعه در دنیای پرمشغله امروز هستند.','در دنیای امروز که زمان به شدت محدود است، کتاب‌های صوتی به یکی از محبوب‌ترین روش‌های مطالعه تبدیل شده‌اند. این کتاب‌ها به شما امکان می‌دهند در حین انجام کارهای روزمره مانند رانندگی یا ورزش، به مطالعه بپردازید.',0,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(13,'چرا کتاب‌های الکترونیکی محبوب شده‌اند؟',5,1,1,'10.jpg','10.jpg',NULL,'کتاب‌های الکترونیکی به دلیل مزایای فراوان، محبوبیت زیادی پیدا کرده‌اند.','کتاب‌های الکترونیکی به دلیل قابلیت حمل آسان، دسترسی سریع و قیمت مناسب، جایگاه ویژه‌ای در میان علاقه‌مندان به کتاب پیدا کرده‌اند. این کتاب‌ها همچنین به حفظ محیط زیست کمک می‌کنند.',0,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(14,'فواید کتابخوانی برای کودکان',6,1,1,'11.jpg','08.jpg',NULL,'کتابخوانی نقش مهمی در رشد فکری و اجتماعی کودکان دارد.','کتابخوانی نه تنها به افزایش دایره لغات کودکان کمک می‌کند، بلکه باعث تقویت قوه تخیل و خلاقیت آن‌ها نیز می‌شود. خواندن کتاب‌های داستانی به کودکان کمک می‌کند تا با احساسات و موقعیت‌های مختلف آشنا شوند.',0,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(15,'تفاوت کتاب‌های صوتی و متنی',4,1,1,'12.jpg','12.jpg',NULL,'مقایسه کتاب‌های صوتی و متنی و مزایای هر کدام.','کتاب‌های صوتی برای افرادی که زمان کمی دارند یا ترجیح می‌دهند در حین انجام کارهای دیگر مطالعه کنند، گزینه مناسبی هستند. از طرفی، کتاب‌های متنی برای کسانی که به دنبال تمرکز بیشتر و درک عمیق‌تر مطالب هستند، مناسب‌ترند.',0,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(16,'تاثیر کتاب‌های الکترونیکی بر صنعت نشر',5,1,1,'13.jpg','13.jpg',NULL,'کتاب‌های الکترونیکی چگونه صنعت نشر را متحول کرده‌اند.','با ظهور کتاب‌های الکترونیکی، صنعت نشر دستخوش تغییرات بزرگی شده است. این کتاب‌ها هزینه‌های چاپ و توزیع را کاهش داده‌اند و دسترسی به کتاب‌ها را برای همه آسان‌تر کرده‌اند.',0,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16');
 
 /*Table structure for table `content_contactus` */
 
@@ -1244,6 +1252,7 @@ CREATE TABLE `users` (
   `author` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'آیا نویسنده است ؟',
   `translator` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'آیا مترجم است ؟',
   `photo` varchar(255) COLLATE utf8_persian_ci DEFAULT NULL COMMENT 'تصویر',
+  `publishedBooks` int(11) DEFAULT NULL COMMENT 'تعداد کتابهایی که نوشته',
   `lang` varchar(2) COLLATE utf8_persian_ci NOT NULL DEFAULT 'fa' COMMENT 'زبان',
   `status_id` int(11) NOT NULL DEFAULT 1 COMMENT 'شناسه وضعیت فعال/غیر فعال',
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -1255,16 +1264,16 @@ CREATE TABLE `users` (
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`firstname`,`lastname`,`mobile`,`biography`,`birth_date`,`death_date`,`nationality`,`password`,`role_id`,`narrator`,`author`,`translator`,`photo`,`lang`,`status_id`,`deleted_at`,`created_at`,`updated_at`) values 
-(1,'سایان','مدیر ارشد','09191964745',NULL,NULL,NULL,NULL,'$2y$12$hqhPu83TPFSagUrWfhnHC.laRyIVgSJSj7fCAE63KWMH9vpLFC8hO',1,0,0,0,'admin.jpg','fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(2,'علی','محمدی','09111111111',NULL,NULL,NULL,NULL,'$2y$12$R0HRI63hWkovJ3bla0ajsOmfBitOG7tZJC3nCxTreOUOpzEwNhgSi',0,0,0,0,'user1.jpg','fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(3,'فاطمه','رضایی','09111111112',NULL,NULL,NULL,NULL,'$2y$12$2ggE8SjJWYDYFJFIInqGz.CaNNPwAxfYBg/tf6p0v9lmobA2lrZ4O',0,0,0,0,'user2.jpg','fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(4,'محمد','فروغی','09122222222',NULL,NULL,NULL,NULL,'$2y$12$FmZLidjqyEXxtSdQ6ks/POuSlRRDJP4TVpy0z6a/LjO6zVv4RtoQ2',1,0,0,1,'translator1.jpg','fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(5,'زهرا','اکبری','09122222223',NULL,NULL,NULL,NULL,'$2y$12$xM9V8otojl/c4FOoeKk6v.kblkXF.0aR/vJj19feHzMTX9yx7nHAa',1,0,0,1,'translator2.jpg','fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(6,'حسین','مهدوی','09133333333',NULL,NULL,NULL,NULL,'$2y$12$6Ala1eDzBX0ZsGJX7VNvUeP0ZQKJ76BZbGTB1O4mppptrjUyCSbRi',1,1,0,0,'narrator1.jpg','fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(7,'نرگس','کریمی','09133333334',NULL,NULL,NULL,NULL,'$2y$12$kZA39JMqwYYhKdKfDQ00L.DNyw/iHVaDwwjx6zlAGcFVom7yPFOy6',1,1,0,0,'narrator2.jpg','fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(8,'صادق','هدایت','09144444444',NULL,NULL,NULL,NULL,'$2y$12$eE2Xm30KqGPCeY8uVcftSu9FEneVVwbs0nhWf6O12/80NDmRnELom',1,0,1,0,'author1.jpg','fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
-(9,'سیمین','بهبهانی','09144444445',NULL,NULL,NULL,NULL,'$2y$12$J960tCF8n6Nffiu/Py2fu.U2CGA4WfyH6L4Aqy9AGK8G6/QfkzIMy',1,0,1,0,'author2.jpg','fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16');
+insert  into `users`(`id`,`firstname`,`lastname`,`mobile`,`biography`,`birth_date`,`death_date`,`nationality`,`password`,`role_id`,`narrator`,`author`,`translator`,`photo`,`publishedBooks`,`lang`,`status_id`,`deleted_at`,`created_at`,`updated_at`) values 
+(1,'سایان','مدیر ارشد','09191964745',NULL,NULL,NULL,NULL,'$2y$12$hqhPu83TPFSagUrWfhnHC.laRyIVgSJSj7fCAE63KWMH9vpLFC8hO',1,0,0,0,'06.jpg',NULL,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(2,'علی','محمدی','09111111111',NULL,NULL,NULL,NULL,'$2y$12$R0HRI63hWkovJ3bla0ajsOmfBitOG7tZJC3nCxTreOUOpzEwNhgSi',0,0,0,0,'01.jpg',23,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(3,'فاطمه','رضایی','09111111112',NULL,NULL,NULL,NULL,'$2y$12$2ggE8SjJWYDYFJFIInqGz.CaNNPwAxfYBg/tf6p0v9lmobA2lrZ4O',0,0,0,0,'02.jpg',13,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(4,'محمد','فروغی','09122222222',NULL,NULL,NULL,NULL,'$2y$12$FmZLidjqyEXxtSdQ6ks/POuSlRRDJP4TVpy0z6a/LjO6zVv4RtoQ2',1,0,0,1,'03.jpg',4,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(5,'زهرا','اکبری','09122222223',NULL,NULL,NULL,NULL,'$2y$12$xM9V8otojl/c4FOoeKk6v.kblkXF.0aR/vJj19feHzMTX9yx7nHAa',1,0,0,1,'04.jpg',67,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(6,'حسین','مهدوی','09133333333',NULL,NULL,NULL,NULL,'$2y$12$6Ala1eDzBX0ZsGJX7VNvUeP0ZQKJ76BZbGTB1O4mppptrjUyCSbRi',1,1,0,0,'05.jpg',43,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(7,'نرگس','کریمی','09133333334',NULL,NULL,NULL,NULL,'$2y$12$kZA39JMqwYYhKdKfDQ00L.DNyw/iHVaDwwjx6zlAGcFVom7yPFOy6',1,1,0,0,'01.jpg',56,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(8,'صادق','هدایت','09144444444',NULL,NULL,NULL,NULL,'$2y$12$eE2Xm30KqGPCeY8uVcftSu9FEneVVwbs0nhWf6O12/80NDmRnELom',1,0,1,0,'02.jpg',7,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16'),
+(9,'سیمین','بهبهانی','09144444445',NULL,NULL,NULL,NULL,'$2y$12$J960tCF8n6Nffiu/Py2fu.U2CGA4WfyH6L4Aqy9AGK8G6/QfkzIMy',1,0,1,0,'01.jpg',34,'fa',1,NULL,'2025-03-16 09:29:16','2025-03-16 09:29:16');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

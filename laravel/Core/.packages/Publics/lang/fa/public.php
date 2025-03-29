@@ -94,6 +94,9 @@ $lang = array_merge($lang, $breadcrumbs);
 $adminPublic = include(__DIR__.'/./admin-public.php');
 $lang = array_merge($lang, $adminPublic);
 
+$adminPublic = include(__DIR__.'/./site.php');
+$lang = array_merge($lang, $adminPublic);
+
 if (\App::getLocale() == 'en') {
     $lang2 = include(__DIR__.'/./fa-words.php');
     $lang = array_merge($lang, $lang2);

@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('photo')->nullable()->comment("تصویر");
             $table->string('lang', 2)->default("fa")->comment("زبان");
             $table->integer('status_id')->default(1)->comment("شناسه وضعیت فعال/غیر فعال");
+            $table->integer('publishedBooks')->default(0)->comment("تعداد کتابهایی که نوشته");
             $table->softDeletes();
             $table->timestamps();
         });
